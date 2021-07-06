@@ -6,6 +6,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: scroll;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
