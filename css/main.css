@@ -1,7 +1,7 @@
 body {
     margin: 60px auto;
     width: 70%;
-    background-image: url("images/mountain_lines.jpg");
+    background-image: url("./images/mountain_lines.jpg");
     background-color: white;
     background-position: center;
     background-size: cover;
