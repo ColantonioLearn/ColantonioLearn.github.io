@@ -2,8 +2,26 @@
 layout: default
 title: Ongoing Projects
 ---
+<body>
 <div class="blurb">
 	<p>In progress! Projects will go here.</p>
-  
+
   <p> Expect more as I finish building the site's framework! </p>
 </div><!-- /.blurb -->
+<footer>
+		<ul>
+				<li><a href="mailto:colantoniojoseph@gmail.com">
+					<img src="/images/email.png" alt="email" width=50px class="no_hover">
+				</a></li>
+				<li><a href="https://github.com/ColantonioLearn", target="_blank">
+					<img src="/images/github.png" alt="github" width=50px class="no_hover">
+				</a></li>
+				<li><a href="https://www.linkedin.com/in/joseph-colantonio-63186692/", target="_blank">
+					<img src="/images/linkedin.png" alt="linkedIn" width=50px class="no_hover">
+				</a></li>
+				<li><a href="https://twitter.com/JosephCola2nd", target="_blank">
+					<img src="/images/twitter.png" alt="twitter" width=50px class="no_hover">
+				</a></li>
+	</ul>
+</footer>
+</body>
