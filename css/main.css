@@ -1,12 +1,14 @@
 body {
     margin: 60px auto;
     width: 70%;
+/*
     background: url(/images/mountain_lines.jpg);
     background-color: white;
-    background-position: bottom;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
+*/
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
