@@ -62,7 +62,7 @@ a {
     text-decoration: none;
     font-weight: 400;
     color: gray;
-    transition: all .35s ease;
+    /*transition: all .35s ease;
 
     &::before {
         content: "";
@@ -71,7 +71,7 @@ a {
         height: 2px;
         bottom: 0;
         left: 0;
-        /*background-color: yellow;*/
+        background-color: yellow;
         visibility: hidden;
         -webkit-transform: scaleX(0);
         transform: scaleX(0);
@@ -87,5 +87,5 @@ a {
             -webkit-transform: scaleX(1);
             transform: scaleX(1);
         }
-    }
+    } */
 }
