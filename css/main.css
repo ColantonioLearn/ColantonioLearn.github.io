@@ -15,7 +15,7 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline;
 }
 nav ul li, footer ul li {
     display: inline;
@@ -48,4 +48,9 @@ ul.posts li {
 
 .no_hover {
   text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
 }
