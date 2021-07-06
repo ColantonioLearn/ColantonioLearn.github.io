@@ -2,6 +2,7 @@
 layout: default
 title: Joseph's Blog
 ---
+<body>
 	<h1>{{ page.title }}</h1>
 	<ul class="posts">
 
@@ -9,19 +10,4 @@ title: Joseph's Blog
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	  {% endfor %}
 	</ul>
-	<footer>
-			<ul>
-					<li><a href="mailto:colantoniojoseph@gmail.com">
-						<img src="/images/email.png" alt="email" width=50px class="no_hover">
-					</a></li>
-					<li><a href="https://github.com/ColantonioLearn", target="_blank">
-						<img src="/images/github.png" alt="github" width=50px class="no_hover">
-					</a></li>
-					<li><a href="https://www.linkedin.com/in/joseph-colantonio-63186692/", target="_blank">
-						<img src="/images/linkedin.png" alt="linkedIn" width=50px class="no_hover">
-					</a></li>
-					<li><a href="https://twitter.com/JosephCola2nd", target="_blank">
-						<img src="/images/twitter.png" alt="twitter" width=50px class="no_hover">
-					</a></li>
-		</ul>
-	</footer>
+</body>
