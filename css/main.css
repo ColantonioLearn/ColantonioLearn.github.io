@@ -47,3 +47,6 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+.no_hover{
+  text-decoration: none;
+}
