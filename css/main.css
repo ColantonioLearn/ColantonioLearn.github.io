@@ -3,7 +3,7 @@ body {
     width: 70%;
     background: url(/images/mountain_lines.jpg);
     background-color: white;
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
