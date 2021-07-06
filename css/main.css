@@ -45,3 +45,14 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+.img-wrap {
+  position:relative;
+}
+
+.img-wrap .img-overlay {
+  position: absolute;
+  z-index:2;
+  top: 10px;
+  right: 10px;
+}
