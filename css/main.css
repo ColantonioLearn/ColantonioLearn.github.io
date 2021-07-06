@@ -55,4 +55,14 @@ ul.posts li {
 a {
   color: gray;
   text-decoration: underline;
+
+  &:hover {
+        color: blue;
+
+        &::before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
 }
