@@ -98,7 +98,7 @@ ul.posts li {
 }
 
 .horizontal-snap img {
-  width: auto;
+  width: 600px;
   height: auto;
   max-width: 75%;
   object-fit: contain;
