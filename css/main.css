@@ -91,6 +91,10 @@ ul.posts li {
   overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
+
+  .Flipped{
+            transform: rotateX(180deg);
+        }
 }
 
 .horizontal-snap > a {
