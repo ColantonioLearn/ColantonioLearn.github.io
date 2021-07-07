@@ -84,10 +84,10 @@ ul.posts li {
   margin: 0 auto;
   display: grid;
   grid-auto-flow: column;
-  gap: 144px; /* adds gap between each item */
+  gap: 120px; /* adds gap between each item */
   /*height: calc(180px + 1rem);*/
-  padding: 72px;
-  width: 960px;
+  padding: 60px;
+  width: 1200px;
   overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
@@ -98,7 +98,7 @@ ul.posts li {
 }
 
 .horizontal-snap img {
-  width: 720px;
+  width: 600px;
   max-width: none;
   object-fit: contain;
   border-radius: 1rem;
