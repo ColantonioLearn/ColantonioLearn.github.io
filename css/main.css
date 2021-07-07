@@ -86,7 +86,7 @@ ul.posts li {
   grid-auto-flow: column;
   gap: 120px; /* adds gap between each item */
   /*height: calc(180px + 1rem);*/
-  padding: 60px;
+  /*padding: 60px;*/
   width: 600px;
   overflow-y: auto;
   overscroll-behavior-x: contain;
