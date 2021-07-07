@@ -87,7 +87,7 @@ ul.posts li {
   gap: 1rem;
   height: calc(180px + 1rem);
   padding: 1rem;
-  width: 75%;
+  width: 480px;
   overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
@@ -98,7 +98,7 @@ ul.posts li {
 }
 
 .horizontal-snap img {
-  width: 30%;
+  width: 720px;
   max-width: none;
   object-fit: contain;
   border-radius: 1rem;
