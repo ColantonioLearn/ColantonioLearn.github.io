@@ -88,6 +88,7 @@ ul.posts li {
   /*height: calc(180px + 1rem);*/
   /*padding: 60px;*/
   width: 600px;
+  max-width: 80vw;
   overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
