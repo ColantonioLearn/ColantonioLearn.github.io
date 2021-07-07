@@ -84,7 +84,7 @@ ul.posts li {
   margin: 0 auto;
   display: grid;
   grid-auto-flow: column;
-  /*gap: 1rem;*/
+  gap: 144px; /* adds gap between each item */
   /*height: calc(180px + 1rem);*/
   padding: 72px;
   width: 960px;
