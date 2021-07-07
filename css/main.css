@@ -84,7 +84,7 @@ ul.posts li {
   margin: 0 auto;
   display: grid;
   grid-auto-flow: column;
-  gap: 96px; /* adds gap between each item */
+  gap: 120px; /* adds gap between each item */
   /*height: calc(180px + 1rem);*/
   /*padding: 60px;*/
   width: 600px;
@@ -98,8 +98,9 @@ ul.posts li {
 }
 
 .horizontal-snap img {
-  width: 480px;
-  max-device-width: 75%;
+  width: auto;
+  height: auto;
+  max-width: 75%;
   object-fit: contain;
   border-radius: 1rem;
 }
