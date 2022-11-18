@@ -89,7 +89,7 @@ ul.posts li {
   /*padding: 60px;*/
   width: 40vw;
   max-width: 40vw;
-  overflow-y: hidden;
+  overflow-x: hidden;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
 }
