@@ -90,8 +90,8 @@ ul.posts li {
   width: 40vw;
   max-width: 40vw;
   overflow-y: hidden;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: x mandatory;
 }
 
 .horizontal-snap > a {
