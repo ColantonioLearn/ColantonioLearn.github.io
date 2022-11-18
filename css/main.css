@@ -87,7 +87,7 @@ ul.posts li {
   gap: 120px; /* adds gap between each item */
   /*height: calc(180px + 1rem);*/
   /*padding: 60px;*/
-  width: 600px;
+  /* width: 600px; */
   max-width: 75vw;
   overflow-y: auto;
   overscroll-behavior-x: contain;
@@ -106,5 +106,5 @@ ul.posts li {
 }
 
 .researchItem {
-  
+
 }
