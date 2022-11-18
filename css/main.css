@@ -89,9 +89,15 @@ ul.posts li {
   /*padding: 60px;*/
   width: 40vw;
   max-width: 40vw;
+<<<<<<< HEAD
   overflow-x: hidden;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
+=======
+  overflow-y: hidden;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: x mandatory;
+>>>>>>> 8bea71d03060fe1af65199edf822376b322e7e91
 }
 
 .horizontal-snap > a {
