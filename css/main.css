@@ -87,11 +87,11 @@ ul.posts li {
   gap: 120px; /* adds gap between each item */
   /*height: calc(180px + 1rem);*/
   /*padding: 60px;*/
-  width: 75vw;
-  max-width: 75vw;
-  overflow-y: auto;
+  width: 40vw;
+  max-width: 40vw;
+  overflow-y: hidden;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
 }
 
 .horizontal-snap > a {
