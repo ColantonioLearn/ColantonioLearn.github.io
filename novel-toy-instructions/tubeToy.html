@@ -1,0 +1,74 @@
+<!-- tubeToy.html -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="tubeToy.css">
+    <title>Novel Toy Image Hotspots</title>
+  </head>
+  <body>
+
+    <!-- audio pre-loading -->
+    <!-- <audio id="notification-soundN" preload="auto">
+      <source src="\sounds\FUNCTIONNAMESOUNDHERE-sound.mp3" type="audio/mpeg">
+    </audio> -->
+    
+    <audio id="notification-sound1" preload="auto">
+      <source src="sounds\duck-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- boxToy.html -->
+
+    <!-- Container for the interactive elements -->
+    <div class="container">
+
+        <!-- Container for the image hotspot and interactive elements -->
+        <div class="image-hotspot">
+
+            <!-- Base image -->
+            <img src="images\tubeToy_forInstructions.png" alt="tubeToy hotspot should be here">
+
+            <!-- TEMPLATE START FOR FUNCTIONS -->
+
+            <!-- Icon anchor/location for click interaction -->
+            <!-- <div class="icon [FUNCTIONNAME]Icon spin off" id="icon[#] [FUNCTION_NAME/PART_NAME]]"> -->
+            <!-- [FUNCTIONNAME]Icon: used for identifying in JS, determines which animation, etc, to run
+                 off: starting state of functions
+                 icon[#]: continue iteratively -->
+    
+                <!-- Function-box for the cool thing the toy does -->
+                <!-- <div class="function-box" id="function[#]"> -->
+                <!-- function[#]: continue iteratively -->
+            
+                    <!-- Image within the function-box -->
+                    <!-- <img src="{{ url_for('static', filename='images/[box OR tube]Toy/[FUNCTION_IMAGE].png') }}" alt="[FUNCTION ALT TEXT]"> -->
+                    <!-- [box or tube]: which toy is being used
+                         [FUNCTION_IMAGE]: filename for the specific function
+                         [FUNCTION ALT TEXT]: placeholder if image file missing/error-->
+
+                <!-- </div>   -->
+            <!-- </div> -->
+            <!-- TEMPLATE END FOR FUNCTIONS -->
+            
+            <!-- White Duck Squeak Function Start -->
+            <!-- Icon for interaction -->
+            <div class="icon whiteDuckIcon squeak off" id="icon1 whiteDuck function1">
+            </div>
+            
+            <!-- Image within the function-box -->
+            <img class="function whiteDuckImage squeak off" id="function1" src="images\function1_rubberDuck.png" alt="white duck">
+        
+            <!-- White Duck Squeak Function End -->
+
+            
+
+        </div>
+
+    </div>
+
+    <!-- Scripts for jQuery and custom interaction -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="tubeToy.js"></script>
+
+  </body>
+</html>

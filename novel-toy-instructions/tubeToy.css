@@ -1,4 +1,4 @@
-/* boxToy.css */
+/* tubeToy.css */
 
 *{
     margin: 0;
@@ -63,42 +63,51 @@ body{
 }
 
 /* Styles for the spinning icon */
-.orangePinwheelIcon {
-    top: 53%;
-    left: 27%;
-    width: 21vw;
-    height: 22vw;
-    border-radius: 50%;
+.whiteDuckIcon {
+    top: 31.2%;
+    right: 16.1%;
+    width: 2.7vw;
+    height: 3.7vw;
+    border-radius: 50% 45% 50% 50%;
     position: absolute;
     z-index: 10;
     cursor: pointer;
+    rotate: 0deg;
+    opacity: 1;
 }
 
 /* Styles for the function-box and its image */
-.function-box {
+.function.whiteDuckImage {
+    right: 13%;
+    top: 8.8%;
+    height: 12vw;
     position: absolute;
-    top: 2%;
-    overflow: hidden;
-    z-index: 9;
+    /* overflow: hidden; */
+    z-index: 11;
     cursor: pointer;
-}
-
-.function-box img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    opacity: 1;
+    animation: squeakAnimation 1s;
+    display: none;
+    /* opacity: 0; */
 }
 
 /* Keyframes for the spin animation */
-@keyframes spinAnimation {
+@keyframes squeakAnimation {
+    /* what the animation does at the start of the sequence (aka 0% progress)*/
     0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+        transform: scale(1) translateY(0); /* Start position */
+      }
+      /* what the animation does about two-thirds through the sequence (aka 67.5% progress)*/
+      67.5% {
+        transform: scale(0.96) translateY(-.5%); /* Squeezing motion */
+      }
+      /* what the animation does at the end of the sequence (aka 100% progress)*/
+      100% {
+          transform: scale(1) translateY(0); /* Back to start */
+        }
 
 /* Styles for the spinning animation */
-.spin.on {
-    animation: spinAnimation 1s linear infinite;
+.squeak.on {
+    animation: squeakAnimation 1.5s linear infinite;
 }
