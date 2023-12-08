@@ -1,55 +1,53 @@
-// boxToy.js
+// Get the necessary elements
+var orangePinwheelIcon = document.querySelector('.orangePinwheelIcon');
+var orangePinwheelImage = document.querySelector('.orangePinwheelImage');
+var sound = document.getElementById('notification-sound1');
+var isSpinning = false;
 
-// Wait for the DOM to be ready
-$(document).ready(function () {
+// Function to play the sound
+function playSound() {
+    sound.play(); // Play the sound
+}
 
-    // Cache the reference to the Orange Pinwheel icon
-    var orangePinwheelIcon = $(".orangePinwheelIcon");
-  
-    // Cache the reference to the Orange Pinwheel image
-    var orangePinwheelImage = $(".orangePinwheelIcon img");
-  
-    // Cache the reference to the notification sound
-    var notificationSound = $("#notification-sound1")[0]; // [0] gets the raw DOM element
-  
-    // Variable to track if the pinwheel is currently spinning
-    var isSpinning = false;
-  
-    // Function to handle the click event on the Orange Pinwheel icon
-    orangePinwheelIcon.click(function () {
-  
-      // Check if the pinwheel is currently spinning
-      if (isSpinning) {
-        // If spinning, stop the spin animation
-        orangePinwheelIcon.removeClass("spin on");
-  
-        // Pause the notification sound
-        notificationSound.pause();
-  
-        // Set spinning state to false
-        isSpinning = false;
-      } else {
-        // If not spinning, start the spin animation
-        orangePinwheelIcon.addClass("spin on");
-  
-        // Play the notification sound and make it loop
-        notificationSound.volume = 1;
-        notificationSound.currentTime = 0; // Reset to the beginning
-        notificationSound.loop = true;
-        notificationSound.play();
-  
-        // Set spinning state to true
-        isSpinning = true;
-      }
-    });
-  
-    // Function to handle the end of the spin animation (when it completes one full rotation)
-    orangePinwheelIcon.on("animationiteration", function () {
-      // Check if the pinwheel is spinning
-      if (isSpinning) {
-        // If spinning, continuously play the notification sound
-        notificationSound.play();
-      }
-    });
-  });
-  
+// Function to stop the sound
+function stopSound() {
+    sound.pause(); // Pause the sound
+    sound.currentTime = 0; // Reset the sound to the beginning
+}
+
+// Add a click event listener to the orangePinwheelIcon
+orangePinwheelIcon.addEventListener('click', function() {
+    // If the image is currently spinning, stop it; otherwise, start it and play the sound
+    if (isSpinning) {
+        // Get the current rotation angle of the image
+        var computedStyle = window.getComputedStyle(orangePinwheelImage);
+        var transform = computedStyle.getPropertyValue('transform');
+        var values = transform.split('(')[1].split(')')[0].split(',');
+        var a = values[0];
+        var b = values[1];
+        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+
+        // Set the final state of the animation to the current rotation angle
+        orangePinwheelIcon.style.animation = 'none';
+        orangePinwheelIcon.style.transform = 'rotate(' + angle + 'deg)';
+        
+        orangePinwheelImage.style.animation = 'none';
+        orangePinwheelImage.style.transform = 'rotate(' + angle + 'deg)';
+        
+        stopSound(); // Stop the sound when the spinning animation stops
+    } else {
+        setTimeout(function() {
+          orangePinwheelIcon.style.animation = 'spinAnimation 0.7s linear infinite';
+          orangePinwheelImage.style.animation = 'spinAnimation 0.7s linear infinite';
+        }, 100); // 100 milliseconds (0.1 seconds) delay
+
+        playSound(); // Play the sound only when the spinning animation starts
+    }
+
+    // Update the spinning state
+    isSpinning = !isSpinning;
+});
+
+// Ensure the image is not spinning on load
+orangePinwheelImage.style.animation = 'none';
+orangePinwheelIcon.style.animation = 'none';
