@@ -1,8 +1,12 @@
+// boxToy.js
 // Get the necessary elements
 var orangePinwheelIcon = document.querySelector('.orangePinwheelIcon');
 var orangePinwheelImage = document.querySelector('.orangePinwheelImage');
 var sound = document.getElementById('notification-sound1');
 var isSpinning = false;
+
+// Preload the audio
+sound.preload = 'auto';
 
 // Function to play the sound
 function playSound() {
@@ -37,8 +41,8 @@ orangePinwheelIcon.addEventListener('click', function() {
         stopSound(); // Stop the sound when the spinning animation stops
     } else {
         setTimeout(function() {
-          orangePinwheelIcon.style.animation = 'spinAnimation 0.7s linear infinite';
-          orangePinwheelImage.style.animation = 'spinAnimation 0.7s linear infinite';
+          orangePinwheelIcon.style.animation = 'spinAnimation 1.5s linear infinite';
+          orangePinwheelImage.style.animation = 'spinAnimation 1.5s linear infinite';
         }, 100); // 100 milliseconds (0.1 seconds) delay
 
         playSound(); // Play the sound only when the spinning animation starts

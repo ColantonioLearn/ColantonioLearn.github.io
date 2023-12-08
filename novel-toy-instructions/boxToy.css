@@ -31,8 +31,8 @@ body{
 }
 
 .container {
-    max-width: 70vw;
-    max-height: 70vh;
+    max-width: 65vw;
+    max-height: 65vh;
     margin: auto;
 }
 
@@ -66,10 +66,10 @@ body{
 .orangePinwheelIcon {
     -webkit-clip-path: polygon(28% 3%, 41% 31%, 41% 31%, 69% 18%, 99% 21%, 71% 41%, 75% 68%, 75% 68%, 72% 95%, 72% 95%, 57% 69%, 24% 75%, 24% 75%, 4% 70%, 4% 70%, 31% 58%, 22% 22%, );
     clip-path: polygon(28% 3%, 41% 31%, 41% 31%, 69% 18%, 99% 21%, 71% 41%, 75% 68%, 75% 68%, 72% 95%, 72% 95%, 57% 69%, 24% 75%, 24% 75%, 4% 70%, 4% 70%, 31% 58%, 22% 22%);
-    left: 18.6%;
-    bottom: 3%;
-    height: 22vw;
-    width: 21.8vw;
+    left: 19%;
+    bottom: 5.9%;
+    height: 18.5vw;
+    width: 18.5vw;
     /* border-radius: 50% 45% 45% 44%; */
     position: absolute;
     z-index: 10;
@@ -80,9 +80,9 @@ body{
 
 /* Styles for the function-box and its image */
 .function.orangePinwheelImage {
-    left: 19.5%;
-    bottom: 5%;
-    height: 20vw;
+    left: 20.2%;
+    bottom: 8%;
+    height: 17vw;
     position: absolute;
     /* overflow: hidden; */
     radius: 100%;
@@ -111,5 +111,5 @@ body{
 
 /* Styles for the spinning animation */
 .spin {
-    animation: spinAnimation 0.7s linear infinite;
+    animation: spinAnimation 3s linear infinite;
 }
