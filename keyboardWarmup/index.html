@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #game-container {
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        #target-key {
+            font-size: 8rem;
+            margin: 20px;
+            color: red;
+        }
+        #message {
+            font-size: 2.5rem;
+            margin: 20px;
+            color: green;
+        }
+        #instruction {
+            font-size: 1.5rem;
+            margin: 20px;
+            display: none;
+        }
+        #score {
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+        .star {
+            font-size: 2rem;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Press the button on the keyboard with the number shown below!<br><br></h1>
+        <div id="target-key">?</div>
+        <div id="message"></div>
+        <div id="instruction">Great job! Press on the spacebar to continue!<br></div>
+        <div id="score"><br>Score: <span id="score-stars"></span></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
