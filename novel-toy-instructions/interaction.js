@@ -192,9 +192,14 @@ $(document).ready(function () {
       // boxToy Box Toy activators
 
       // If the clicked part is the orangePinwheelIcon, start or stop spinning
-      if (part.hasClass('orangePinwheelIcon')) {
+      if (part.hasClass('blueKnobIcon')) {
         spinOrangePinwheel(part, currentStatus);
       }
+      
+      // From old version where clicking the pinwheel made it spin
+      // if (part.hasClass('orangePinwheelIcon')) {
+      //   spinOrangePinwheel(part, currentStatus);
+      // }
 
       // turn on green box light
       if (part.hasClass('middleSwitchIcon')) {

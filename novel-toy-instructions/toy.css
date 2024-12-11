@@ -686,7 +686,7 @@ body {
     /* Orange Pinwheel */
 
     /* activator for orange pinwheel */
-    .inertYellowKnowIcon {
+    .blueKnobIcon {
         clip-path: circle(50% at 50% 50%);
         /* width: 25.15vh; */
         height: 18.5vh;
@@ -696,6 +696,17 @@ body {
         bottom: 7.3%;   
         background: rgba(0, 255, 30, 0.76) !important;
         opacity: 1 !important;
+    }
+
+        /* Styles for pinwheel image(s) */
+    .function.blueKnob {
+        left: 21%;
+        bottom: 9%;
+        height: 26vh;
+        position: absolute;
+        z-index: 11;
+        width: auto;
+        opacity: 1;
     }
 
     .orangePinwheelIcon {
