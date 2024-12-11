@@ -699,7 +699,8 @@ body {
     }
 
         /* Styles for pinwheel image(s) */
-    .blueKnobImage.initial {
+    .blueKnobImage.off.initial {
+        transform: rotate(0deg);
         right: 24.1%;
         bottom: 29.2%;
         height: 6.9vh;
@@ -707,11 +708,11 @@ body {
         z-index: 11;
         width: auto;
         opacity: 1;
-        rotate: 90deg;
-        animation: none !important;
+        animation: none;
     }
 
     .blueKnobImage.off {
+        transform: rotate(0deg);
         right: 24.1%;
         bottom: 29.2%;
         height: 6.9vh;
@@ -719,11 +720,11 @@ body {
         z-index: 11;
         width: auto;
         opacity: 1;
-        animation: rotateKnob 1s forwards linear;
-        animation-iteration-count: 1;
+        animation: knobOff 0.5s linear forwards;
     }
 
     .blueKnobImage.on {
+        transform: rotate(180deg);
         right: 24.1%;
         bottom: 29.2%;
         height: 6.9vh;
@@ -731,17 +732,25 @@ body {
         z-index: 11;
         width: auto;
         opacity: 1;
-        animation: rotateKnob 2s reverse linear !important;
-        animation-iteration-count: 1;
+        animation: knobOn 0.5s linear forwards;
     }
     
-    @keyframes rotateKnob {
+    @keyframes knobOn {
         from {
             transform: rotate(0deg);
         }
         to {
-            transform: rotate(90deg);
+            transform: rotate(180deg);
         }
+    }
+
+    @keyframes knobOff {
+        from {
+            transform: rotate(180deg);
+        }
+        to{
+            transform: rotate(0deg);
+        } 
     }
 
     .orangePinwheelIcon {
@@ -780,7 +789,7 @@ body {
 
     /* Styles for the specific spinning animation */
 .spin {
-    animation: spinAnimation 2.5s linear infinite;
+    animation: spinAnimation 1.2s linear infinite;
 }
 
     /* boxLight */

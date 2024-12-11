@@ -4,6 +4,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="toy.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
   </head>
   <body>
 
@@ -12,8 +14,32 @@
       <source src="\sounds\FUNCTIONNAMESOUNDHERE-sound.mp3" type="audio/mpeg">
     </audio> -->
     
+    <!-- Orange Pinwheel sound -->
     <audio id="notification-sound1" preload="auto" loop>
       <source src="sounds\fan-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Box Light Jam sound -->
+    <audio id="notification-sound2" preload="auto" loop>
+      <source src="sounds\boxLight-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Pullcord & Rainbow Pinwheel Noise -->
+    <!-- Cord windup:  https://freesound.org/people/TheFlyFishingFilmmaker/sounds/641696/-->
+    <!-- <audio id="notification-sound2a" preload="auto">
+      <source src="sounds\cordPull-sound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="notification-sound2b" preload="auto">
+      <source src="sounds\cordWindUp-sound.mp3" type="audio/mpeg">
+    </audio> -->
+    <audio id="notification-sound2c" preload="auto">
+      <source src="sounds\rainbowCrank-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Marbles Ratting sound -->
+    <!-- credit: https://freesound.org/people/chloeg830/sounds/559805/ -->
+    <audio id="notification-sound4" preload="auto" loop>
+      <source src="sounds\marbles-sound.mp3" type="audio/mpeg">
     </audio>
 
     <!-- boxToy.html -->
@@ -40,7 +66,7 @@
                 <!-- function[#]: continue iteratively -->
             
                     <!-- Image within the function-box -->
-                    <!-- <img src="{{ url_for('static', filename='images/[box OR tube]Toy/[FUNCTION_IMAGE].png') }}" alt="[FUNCTION ALT TEXT]"> -->
+                    <!-- <img src="{{ url_for('static', filename='images/[box OR tube]Toy/[FUNCTION_IMAGE].png" alt="[FUNCTION ALT TEXT]"> -->
                     <!-- [box or tube]: which toy is being used
                          [FUNCTION_IMAGE]: filename for the specific function
                          [FUNCTION ALT TEXT]: placeholder if image file missing/error-->
@@ -62,7 +88,65 @@
             <!-- Image within the function-box -->
             <img class="function orangePinwheelImage spin off initial" id="function1" src="images\boxToy\OrangePinwheel.png" alt="orange pinwheel">
         
-            <!-- White Duck Squeak Function End -->
+            <!--  -->
+            <!-- Box Light & Middle Switch Function -->
+            <!-- Icon for interaction -->
+            <div class="icon middleSwitchIcon off initial" id="boxLight function2">
+            </div>
+            
+            <!-- Image within the function-box -->
+            <img class="function middleSwitchImage off initial" id="boxLight function2" src="images\boxToy\middleSwitchOff.png" alt="switch for boxLight">
+            <img class="function boxLightImage off initial" id="boxLight inert1" src="images\boxToy\boxLightOn.png" alt="box light turned on here">
+            
+            <!-- Inert Parts -->
+            <div class="icon boxLightBulbIcon" id="boxLightBulb inert1" alt="clickable icon for boxLightBulb"></div>
+            
+            <!--  Box Light & Middle Switch Function End -->
+            <!--  -->
+
+            <!--  -->
+            <!-- Blue Cord & Rainbow Pinwheel Function -->
+            <!-- Icon for interaction -->
+            <div class="icon blueCordIcon off initial" id="cordWheel function3">
+            </div>
+            
+            <!-- Image within the function-box -->
+            <img class="function blueCordImage off initial" id="cordWheel function2" src="images\boxToy\function_Pullcord.png" alt="cord for rainbowPinwheel">
+            <img class="function rainbowPinwheelImage off initial" id="cordWheel inert2" src="images\boxToy\cordPinwheel.png" alt="rainbowPinwheel">
+            
+            <!-- Inert Parts -->
+            <div class="icon rainbowPinwheelIcon" id="cordWheel inert2" alt="clickable icon for rainbowPinwheel"></div>
+            <!--  Blue Cord & Rainbow Pinwheel Function End -->
+            <!--  -->
+
+            <!--  -->
+            <!-- Marbles Function -->
+            <!-- Icon for interaction -->
+            <div class="icon marbleButtonIcon off initial" id="marbles function4">
+            </div>
+
+            <!-- Image within the function-box -->
+            <img class="function marbleButtonImage off initial" id="marblesButton function4" src="images\boxToy\function_buttonOff.png" alt="button for marbles">
+            <img class="function orangeMarbleImage off initial" id="marbles function4" src="images\boxToy\OrangeBall.png" alt="orange marble">
+            <img class="function blueMarbleImage off initial" id="marbles function4" src="images\boxToy\BlueBall.png" alt="blue marble">
+            
+            <!-- Inert Parts -->
+            <div class="icon orangeMarbleIcon off initial" id="orangeMarble inert4" alt="clickable icon for orange marble"></div>
+            <div class="icon blueMarbleIcon off initial" id="blueMarble inert4" alt="clickable icon for blue marble"></div>
+            
+            <!--  Marbles Function End -->
+            <!--  -->
+
+            <!--  -->
+            <!-- Inert Pig -->
+
+            <div class="icon" id="inertPig"></div>
+
+            <!--  -->
+
+            <!-- Clicking catch-all -->
+            <div class="icon blank-space-icon" id="blankClick"></div>
+
 
         </div>
 
