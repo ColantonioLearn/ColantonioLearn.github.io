@@ -504,7 +504,7 @@ body {
     bottom: -0.2%;
     right: 1%;
     background: rgba(255, 0, 0, 0.704) !important;
-    opacity: 0.4 !important;
+    /* opacity: 0.4 !important; */
 }
 
 .squeakerImage.off {
@@ -530,7 +530,7 @@ body {
     position: absolute;
     z-index: 12;
     bottom: 2%;
-    left: 47.7%;
+    left: 34%;
     background: rgba(17, 0, 255, 0.704) !important;
 }
 
@@ -565,7 +565,7 @@ body {
     z-index: 11;
     opacity: 1;
     bottom: 2%;
-    left: 47.6%;
+    left: 34%;
 }
 
 .leverImage.off {
@@ -575,7 +575,7 @@ body {
     z-index: 11;
     opacity: 1;
     bottom: 2%;
-    left: 47.6%;
+    left: 47.7%;
     animation: slideLeverLeft 0.9s ease-in-out forwards;
 }
 
@@ -586,7 +586,7 @@ body {
     z-index: 11;
     opacity: 1;
     bottom: 2%;
-    left: 33.9%;
+    left: 34%;
     animation: slideLeverRight 0.9s ease-in-out forwards;
 }
 
