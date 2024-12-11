@@ -688,51 +688,66 @@ body {
     /* activator for orange pinwheel */
     .blueKnobIcon {
         clip-path: circle(50% at 50% 50%);
-        /* width: 25.15vh; */
-        height: 18.5vh;
+        width: 6.9vh;
+        height: 6.9vh;
         position: absolute;
         z-index: 13;
-        right: 19.9%;
-        bottom: 7.3%;   
+        right: 24.1%;
+        bottom: 29.2%;
         background: rgba(0, 255, 30, 0.76) !important;
-        opacity: 1 !important;
+        opacity: 0 !important;
     }
 
         /* Styles for pinwheel image(s) */
-    .function.blueKnobImage {
-        left: 21%;
-        bottom: 9%;
-        height: 26vh;
+    .blueKnobImage.initial {
+        right: 24.1%;
+        bottom: 29.2%;
+        height: 6.9vh;
         position: absolute;
         z-index: 11;
         width: auto;
         opacity: 1;
+        rotate: 90deg;
+        animation: none !important;
     }
 
-        /* Keyframes for rotating the blue knob */
-@keyframes rotateKnob {
-    0% {
-        transform: rotate(0deg);
+    .blueKnobImage.off {
+        right: 24.1%;
+        bottom: 29.2%;
+        height: 6.9vh;
+        position: absolute;
+        z-index: 11;
+        width: auto;
+        opacity: 1;
+        animation: rotateKnob 1s forwards linear;
+        animation-iteration-count: 1;
     }
-    100% {
-        transform: rotate(180deg);
+
+    .blueKnobImage.on {
+        right: 24.1%;
+        bottom: 29.2%;
+        height: 6.9vh;
+        position: absolute;
+        z-index: 11;
+        width: auto;
+        opacity: 1;
+        animation: rotateKnob 2s reverse linear !important;
+        animation-iteration-count: 1;
     }
-}
-
-    /* Styles for rotating the blue knob */
-.rotateKnobImage {
-    animation: rotateKnob 0.5s linear;
-}
-
-.returnKnobImage {
-    animation: rotateKnob 0.5s linear;
-    animation-direction: reverse;
-}
+    
+    @keyframes rotateKnob {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(90deg);
+        }
+    }
 
     .orangePinwheelIcon {
     clip-path: polygon(28% 3%, 41% 31%, 41% 31%, 69% 18%, 99% 21%, 71% 41%, 75% 68%, 75% 68%, 72% 95%, 72% 95%, 57% 69%, 24% 75%, 24% 75%, 4% 70%, 4% 70%, 31% 58%, 22% 22%);
-    left: 19.9%;
-    bottom: 7.3%;
+    left: 26.9%;
+    bottom: 17%;
     height: 28vh;
     width: 29vh;
     position: absolute;
@@ -744,9 +759,9 @@ body {
 
     /* Styles for pinwheel image(s) */
 .function.orangePinwheelImage {
-    left: 21%;
-    bottom: 9%;
-    height: 26vh;
+    left: 27.5%;
+    bottom: 18%;
+    height: 27vh;
     position: absolute;
     z-index: 11;
     width: auto;
@@ -920,7 +935,7 @@ body {
         transform: translateY(0vh);
     }
     to {
-        transform: translateY(6vh) 
+        transform: translateY(6vh); 
     }
 }
 
@@ -929,7 +944,7 @@ body {
         transform: translateY(6vh);
     }
     to {
-        transform: translateY(0vh) 
+        transform: translateY(0vh); 
     }
 }
 

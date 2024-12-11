@@ -44,9 +44,6 @@ $(document).ready(function () {
       // Toggle the status of the part (lit/darkened)
       togglePartStatus(part);
 
-      // Send data to the server
-      recordInteraction(partName, toyName, currentStatus);
-
       // tubeToy Tube Toy activators
 
       // If the clicked part is the whiteDuckIcon, pop up and squeak, or disappear
@@ -410,7 +407,6 @@ function spinOrangePinwheel(part, currentStatus) {
   // adding rotation of blue knob
   var blueKnobImage = $('.function.blueKnobImage');
 
-
   var orangePinwheelImage = $('.function.orangePinwheelImage');
   var orangePinwheelIcon = $('.icon.orangePinwheelIcon');  // Corrected selector
   var notificationSound = $('#notification-sound1')[0]; // Get the audio element
@@ -418,6 +414,7 @@ function spinOrangePinwheel(part, currentStatus) {
   // Check if the image has the 'initial' class and remove it
   if (orangePinwheelImage.hasClass('initial')) {
     orangePinwheelImage.removeClass('initial');
+    blueKnobImage.removeClass('initial');
   }
 
   // Toggle spinning elements based on status
@@ -425,9 +422,15 @@ function spinOrangePinwheel(part, currentStatus) {
     // Start spinning animation
     isSpinning = true;
     
-    blueKnobImage.addClass('rotateKnobImage');
+    blueKnobImage.addClass('on');
+    blueKnobImage.removeClass('off');
 
+    orangePinwheelImage.addClass('on');
+    orangePinwheelImage.removeClass('off');
     orangePinwheelImage.addClass('spin');
+
+    orangePinwheelIcon.addClass('on');
+    orangePinwheelIcon.removeClass('off');
     orangePinwheelIcon.addClass('spin');
     
 
@@ -442,9 +445,15 @@ function spinOrangePinwheel(part, currentStatus) {
     // Stop spinning animation
     isSpinning = false;
     
-    blueKnobImage.addClass('returnKnobImage');
+    blueKnobImage.addClass('off');
+    blueKnobImage.removeClass('on');
 
+    orangePinwheelImage.addClass('off');
+    orangePinwheelImage.removeClass('on');
     orangePinwheelImage.removeClass('spin');
+
+    orangePinwheelIcon.addClass('off');
+    orangePinwheelIcon.removeClass('on');
     orangePinwheelIcon.removeClass('spin');  // Corrected line
 
     // Pause the sound only if it's currently playing
