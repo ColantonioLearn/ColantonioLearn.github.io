@@ -795,10 +795,10 @@ body {
     /* boxLight */
 .middleSwitchIcon {
     clip-path: polygon(1% 2%, 94% 2%, 98% 96%, 6% 96%);
-    right: 35.9%;
-    top: 33.6%;
+    right: 32.2%;
+    top: 36%;
     height: 12.9vh;
-    width: 8.35vh;
+    width: 8.8vh;
     position: absolute;
     z-index: 13;
     rotate: 0deg;
@@ -807,9 +807,9 @@ body {
 }
 
 .middleSwitchImage.on {
-    right: 35.8%;
-    top: 33.6%;
-    height: 12.5vh;
+    right: 32.5%;
+    top: 36%;
+    height: 12.4vh;
     width: auto;
     position: absolute;
     z-index: 12;
@@ -818,10 +818,10 @@ body {
 }
 
 .middleSwitchImage.off {
-    right: 35.8%;
-    top: 33.6%;
-    height: 12.5vh;
-    width: auto;
+    right: 32.5%;
+    top: 36.6%;
+    height: 11.8vh;
+    width: 7.9vh;
     position: absolute;
     z-index: 12;
     rotate: 0deg;
@@ -831,8 +831,8 @@ body {
 
 .boxLightBulbIcon {
     clip-path: polygon(34% 36%, 39% 87%, 32% 83%, 28% 79%, 25% 73%, 23% 68%, 22% 62%, 22% 55%, 23% 49%, 25% 44%, 27% 40%, 30% 38%);
-    left: -8.4%;
-    bottom: -5.4%;
+    left: -0.6%;
+    bottom: 8.4%;
     height: 59.9vh;
     width: 48vh;
     position: absolute;
@@ -843,25 +843,23 @@ body {
 }
 
 .boxLightImage.on {
-    left: -5%;
-    bottom: -1.4%;
-    height: 40.5vh;
-    width: auto;
+    left: 5%;
+    bottom: 12.6%;
+    height: 37.5vh;
+    width: 14vh;
     position: absolute;
-    z-index: 0;
-    rotate: -6deg;
+    rotate: -4deg;
     opacity: .6;
     animation: boxLightPulse 10s linear infinite;
 }
 
 .boxLightImage.off {
-    left: -5%;
-    bottom: -1.4%;
-    height: 40.5vh;
-    width: auto;
+    left: 5%;
+    bottom: 12.6%;
+    height: 37.5vh;
+    width: 14vh;
     position: absolute;
-    z-index: 0;
-    rotate: -6deg;
+    rotate: -4deg;
     opacity: 0;
 }
 
@@ -891,8 +889,8 @@ body {
 
 .blueCordIcon.off {
     clip-path: polygon(48% 0%, 49% 70%, 29% 73%, 10% 81%, 5% 90%, 9% 94%, 50% 97%, 93% 93%, 100% 86%, 94% 79%, 58% 70%, 55% 0);
-    right: 16.7%;
-    top: 18%;
+    right: 15%;
+    top: 25.1%;
     height: 25.6vh;
     width: 8.14vh;
     position: absolute;
@@ -905,8 +903,8 @@ body {
 
 .blueCordIcon.on {
     clip-path: polygon(48% 0%, 49% 70%, 29% 73%, 10% 81%, 5% 90%, 9% 94%, 50% 97%, 93% 93%, 100% 86%, 94% 79%, 58% 70%, 55% 0);
-    right: 16.7%;
-    top: 18%;
+    right: 15%;
+    top: 25.1%;
     height: 25.6vh;
     width: 8.14vh;
     position: absolute;
@@ -918,8 +916,8 @@ body {
 }
 
 .blueCordImage.off {
-    right: 16.9%;
-    top: 18%;
+    right: 15%;
+    top: 25.1%;
     height: 25.6vh;
     width: 7.9vh;
     position: absolute;
@@ -929,8 +927,8 @@ body {
 }
 
 .blueCordImage.on {
-    right: 16.9%;
-    top: 18%;
+    right: 15%;
+    top: 25.1%;
     height: 25.6vh;
     width: 7.9vh;
     position: absolute;
@@ -959,10 +957,10 @@ body {
 
 .rainbowPinwheelIcon{    
     clip-path: polygon(0% 50%, 100% 51%, 95% 29%, 78% 8%, 53% 3%, 26% 6%, 8% 32%);
-    right: 12%;
-    top: 0%;
-    height: 21vh;
-    width: 20vh;
+    right: 10%;
+    top: 12%;
+    height: 20vh;
+    width: 19.5vh;
     position: absolute;
     z-index: 13;
     rotate: 358deg;
@@ -971,9 +969,9 @@ body {
 }
 
 .rainbowPinwheelImage.off{
-    right: 12%;
-    top: 0%;
-    height: 20.6vh;
+    right: 10%;
+    top: 12%;
+    height: 20.3vh;
     width: auto;
     position: absolute;
     z-index: -1 !important;
@@ -982,9 +980,9 @@ body {
 }
 
 .rainbowPinwheelImage.on{
-    right: 12%;
-    top: 0%;
-    height: 20.6vh;
+    right: 10%;
+    top: 12%;
+    height: 20.3vh;
     width: auto;
     position: absolute;
     z-index: -1 !important;
@@ -1008,7 +1006,7 @@ body {
 
 .marbleButtonIcon.off {
     clip-path: polygon(1% 55%, 1% 30%, 5% 20%, 12% 14%, 21% 9%, 29% 7%, 37% 5%, 45% 4%, 54% 5%, 61% 6%, 70% 9%, 78% 13%, 83% 19%, 87% 29%, 87% 53%, 81% 64%, 74% 69%, 64% 74%, 53% 76%, 38% 77%, 27% 76%, 16% 72%, 7% 69%, 2% 62%);
-    left: 32.3%;
+    left: 38%;
     top: 44%;
     height: 10vh;
     width: 9.5vh;
@@ -1019,10 +1017,11 @@ body {
 }
 
 .marbleButtonIcon.on {
-    left: 31.65%;
-    top: 44%;
-    height: 8vh;
-    width: 8vh;
+    clip-path: polygon(1% 55%, 1% 30%, 5% 20%, 12% 14%, 21% 9%, 29% 7%, 37% 5%, 45% 4%, 54% 5%, 61% 6%, 70% 9%, 78% 13%, 83% 19%, 87% 29%, 87% 53%, 81% 64%, 74% 69%, 64% 74%, 53% 76%, 38% 77%, 27% 76%, 16% 72%, 7% 69%, 2% 62%);
+    left: 37.8%;
+    top: 46.5%;
+    height: 6vh;
+    width: 9vh;
     position: absolute;
     z-index: 20;
     animation: none;
@@ -1030,7 +1029,7 @@ body {
 }
 
 .marbleButtonImage.off {
-    left: 31.65%;
+    left: 37.3%;
     top: 44%;
     height: 9.5vh;
     width: auto;
@@ -1050,8 +1049,8 @@ body {
 }
 
 .orangeMarbleIcon.off.initial{    
-    left: 25%;
-    top: 42.7%;
+    left: 31%;
+    top: 43.7%;
     height: 4.6vh;
     width: 4.6vh;
     border-radius: 50%;
@@ -1062,8 +1061,8 @@ body {
 }
 
 .orangeMarbleIcon.off{    
-    left: 25%;
-    top: 42.7%;
+    left: 31%;
+    top: 43.7%;
     height: 4.6vh;
     width: 4.6vh;
     border-radius: 50%;
@@ -1075,7 +1074,7 @@ body {
 }
 
 .orangeMarbleIcon.on{    
-    left: 25%;
+    left: 31%;
     top: 42.7%;
     height: 4.6vh;
     width: 4.6vh;
@@ -1088,8 +1087,8 @@ body {
 }
 
 .orangeMarbleImage.off.initial{
-    left: 24.4%;
-    top: 42%;
+    left: 30.4%;
+    top: 43%;
     height: 6vh;
     width: auto;
     position: absolute;
@@ -1099,8 +1098,8 @@ body {
 }
 
 .orangeMarbleImage.off{
-    left: 24.4%;
-    top: 42%;
+    left: 30.4%;
+    top: 43%;
     height: 6vh;
     width: auto;
     position: absolute;
@@ -1111,7 +1110,7 @@ body {
 }
 
 .orangeMarbleImage.on{
-    left: 24.4%;
+    left: 30.4%;
     top: 42%;
     height: 6vh;
     width: auto;
@@ -1122,8 +1121,8 @@ body {
 }
 
 .blueMarbleIcon.off.initial{    
-    left: 43.5%;
-    top: 42.7%;
+    left: 48%;
+    top: 43.7%;
     height: 4.6vh;
     width: 4.6vh;
     border-radius: 50%;
@@ -1134,8 +1133,8 @@ body {
 }
 
 .blueMarbleIcon.off{    
-    left: 43.5%;
-    top: 42.7%;
+    left: 48%;
+    top: 43.7%;
     height: 4.6vh;
     width: 4.6vh;
     border-radius: 50%;
@@ -1147,7 +1146,7 @@ body {
 }
 
 .blueMarbleIcon.on{    
-    left: 43.5%;
+    left: 47.6%;
     top: 42.7%;
     height: 4.6vh;
     width: 4.6vh;
@@ -1161,8 +1160,8 @@ body {
 }
 
 .blueMarbleImage.off.initial{
-    left: 42.8%;
-    top: 42%;
+    left: 47.5%;
+    top: 43%;
     height: 6vh;
     width: auto;
     position: absolute;
@@ -1172,8 +1171,8 @@ body {
 }
 
 .blueMarbleImage.off{
-    left: 42.8%;
-    top: 42%;
+    left: 47.5%;
+    top: 43%;
     height: 6vh;
     width: auto;
     position: absolute;
@@ -1183,7 +1182,7 @@ body {
 }   
 
 .blueMarbleImage.on{
-    left: 42.8%;
+    left: 46.9%;
     top: 42%;
     height: 6vh;
     width: auto;
@@ -1288,12 +1287,11 @@ body {
 
 #inertPig {
     clip-path: polygon(88% 82%, 2% 82%, 8% 46%, 17% 29%, 23% 25%, 27% 9%, 32% 0, 42% 1%, 49% 21%, 58% 20%, 67% 7%, 74% 3%, 81% 9%, 82% 23%, 81% 29%, 90% 42%, 93% 52%, 91% 68%, 87% 73%);
-    top: 7%;
-    right: 31.6%;
+    top: 19%;
+    right: 27.6%;
     height: 18vh;
-    width: 18.3vh;
+    width: 18vh;
     z-index: 25 !important;
-    opacity: 1 !important;
 }
 
 .inertYellowKnowIcon {

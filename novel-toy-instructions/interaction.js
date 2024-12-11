@@ -406,6 +406,7 @@ function spinOrangePinwheel(part, currentStatus) {
 
   // adding rotation of blue knob
   var blueKnobImage = $('.function.blueKnobImage');
+  var blueKnobIcon = $('.function.blueKnobIcon ');
 
   var orangePinwheelImage = $('.function.orangePinwheelImage');
   var orangePinwheelIcon = $('.icon.orangePinwheelIcon');  // Corrected selector
@@ -414,6 +415,7 @@ function spinOrangePinwheel(part, currentStatus) {
   // Check if the image has the 'initial' class and remove it
   if (orangePinwheelImage.hasClass('initial')) {
     orangePinwheelImage.removeClass('initial');
+    orangePinwheelIcon.removeClass('initial');
     blueKnobImage.removeClass('initial');
   }
 
@@ -424,6 +426,9 @@ function spinOrangePinwheel(part, currentStatus) {
     
     blueKnobImage.addClass('on');
     blueKnobImage.removeClass('off');
+
+    blueKnobIcon.addClass('on');
+    blueKnobIcon.removeClass('off');
 
     orangePinwheelImage.addClass('on');
     orangePinwheelImage.removeClass('off');
@@ -447,6 +452,9 @@ function spinOrangePinwheel(part, currentStatus) {
     
     blueKnobImage.addClass('off');
     blueKnobImage.removeClass('on');
+
+    blueKnobIcon.addClass('off');
+    blueKnobIcon.removeClass('on');
 
     orangePinwheelImage.addClass('off');
     orangePinwheelImage.removeClass('on');
@@ -593,7 +601,7 @@ function cordSpinWheel(part, currentStatus) {
 
 // Blue & Orange Marbles
 function rattleMarbles(part, currentStatus) {
-  var marbleButtonIcon = $('.icon.blueCordIcon');
+  var marbleButtonIcon = $('.icon.marbleButtonIcon');
   var marbleButtonImage = $('.function.marbleButtonImage');
   
   var orangeMarbleImage = $('.function.orangeMarbleImage');
