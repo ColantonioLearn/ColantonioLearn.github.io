@@ -1224,7 +1224,19 @@ body {
     height: 18vh;
     width: 18.3vh;
     z-index: 25 !important;
-    /* opacity: 1 !important; */
+    opacity: 1 !important;
+}
+
+.inertYellowKnowIcon {
+    clip-path: polygon(62% 0, 79% 3%, 92% 13%, 100% 79%, 96% 91%, 87% 98%, 65% 100%, 36% 100%, 17% 96%, 5% 89%, 0% 11%, 8% 3%, 26% 0%);width: 25.15vh;
+    /* width: 25.15vh; */
+    height: 18.5vh;
+    position: absolute;
+    z-index: 13;
+    bottom: 14%;
+    left: 33.08%;
+    background: rgba(17, 0, 255, 0.704) !important;
+    opacity: 1 !important;
 }
 
 /*  */

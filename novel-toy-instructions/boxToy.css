@@ -86,7 +86,7 @@ body{
     position: absolute;
     /* overflow: hidden; */
     radius: 100%;
-    z-index: 11;
+    z-index: 9;
     cursor: pointer;
     width: auto;
     opacity: 1;
