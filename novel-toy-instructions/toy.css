@@ -699,7 +699,7 @@ body {
     }
 
         /* Styles for pinwheel image(s) */
-    .function.blueKnob {
+    .function.blueKnobImage {
         left: 21%;
         bottom: 9%;
         height: 26vh;
@@ -708,6 +708,26 @@ body {
         width: auto;
         opacity: 1;
     }
+
+        /* Keyframes for rotating the blue knob */
+@keyframes rotateKnob {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+    /* Styles for rotating the blue knob */
+.rotateKnobImage {
+    animation: rotateKnob 0.5s linear;
+}
+
+.returnKnobImage {
+    animation: rotateKnob 0.5s linear;
+    animation-direction: reverse;
+}
 
     .orangePinwheelIcon {
     clip-path: polygon(28% 3%, 41% 31%, 41% 31%, 69% 18%, 99% 21%, 71% 41%, 75% 68%, 75% 68%, 72% 95%, 72% 95%, 57% 69%, 24% 75%, 24% 75%, 4% 70%, 4% 70%, 31% 58%, 22% 22%);
