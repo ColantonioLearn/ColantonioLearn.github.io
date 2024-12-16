@@ -98,6 +98,11 @@ $(document).ready(function () {
         rattleMarbles(part, currentStatus);
       }
 
+      // If the clicked part is the orangeSliderIcon, slide the switch up or down
+      if (part.hasClass('orangeSliderIcon')) {
+        orangeSlide(part, currentStatus);
+      }
+
   });
 
   // Add the 'initial' class to the elements on page load if 'spin' class is not present
@@ -411,6 +416,7 @@ function spinOrangePinwheel(part, currentStatus) {
   var orangePinwheelImage = $('.function.orangePinwheelImage');
   var orangePinwheelIcon = $('.icon.orangePinwheelIcon');  // Corrected selector
   var notificationSound = $('#notification-sound1')[0]; // Get the audio element
+  notificationSound.volume = 0.7;
 
   // Check if the image has the 'initial' class and remove it
   if (orangePinwheelImage.hasClass('initial')) {
@@ -479,7 +485,7 @@ function boxLightOn(part, currentStatus) {
   var boxLightImage = $('.function.boxLightImage');
   
   var notificationSound = $('#notification-sound2')[0];
-  notificationSound.volume = 0.5;
+  notificationSound.volume = 0.45;
   
     // Check if the image has the 'initial' class and remove it
     if (middleSwitchIcon.hasClass('initial')) {
@@ -695,6 +701,43 @@ function rattleMarbles(part, currentStatus) {
       }
     }, 410);
     // delay by sound pausing by 0.41s, just over length of drop animation
+  }
+}
+
+// Slide orange knob up and down
+function orangeSlide(part, currentStatus) {
+  var orangeSliderIcon = $('.icon.orangeSliderIcon');
+  var orangeSliderImage = $('.orangeSliderImage');
+  
+    // Check if the image has the 'initial' class and remove it
+    if (orangeSliderIcon.hasClass('initial')) {
+      orangeSliderIcon.removeClass('initial');
+    }
+
+    if (orangeSliderImage.hasClass('initial')) {
+      orangeSliderImage.removeClass('initial');
+    }
+  
+  // Check the currentStatus to determine the action
+  if (currentStatus === 'off') {
+    // Flip switch flip if in starting position to "on" position
+    orangeSliderIcon.removeClass('off');
+    orangeSliderIcon.addClass('on');
+
+    orangeSliderImage.removeClass('off');
+    orangeSliderImage.addClass('on');
+
+    console.log('Orange Slider moves down');
+
+   } else {
+    // If the current status is 'on', return to starting state
+    orangeSliderIcon.removeClass('on');
+    orangeSliderIcon.addClass('off');
+
+    orangeSliderImage.removeClass('on');
+    orangeSliderImage.addClass('off');
+
+    console.log('Orange Slider moves up');  
   }
 }
 
