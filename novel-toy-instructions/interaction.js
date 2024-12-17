@@ -287,6 +287,9 @@ function squeakerPull(part, currentStatus) {
   var squeakerImage = $('.function.squeakerImage');
   var squeakerIcon = $('.icon.squeakerIcon');
   var notificationSound = $('#notification-sound3')[0];
+
+  var rainbow1 = $('.function.rainbow1');
+  var rainbow2 = $('.function.rainbow2');
   
     // Check if the image has the 'initial' class and remove it
     if (squeakerImage.hasClass('initial')) {
@@ -295,6 +298,14 @@ function squeakerPull(part, currentStatus) {
 
     if (squeakerIcon.hasClass('initial')) {
       squeakerIcon.removeClass('initial');
+    }
+
+    if (rainbow1.hasClass('initial')) {
+      rainbow1.removeClass('initial');
+    }
+
+    if (rainbow2.hasClass('initial')) {
+      rainbow2.removeClass('initial');
     }
   
   // Check the currentStatus to determine the action
@@ -305,6 +316,12 @@ function squeakerPull(part, currentStatus) {
 
     squeakerIcon.removeClass('off');
     squeakerIcon.addClass('on');
+
+    rainbow1.removeClass('off');
+    rainbow1.addClass('on');
+
+    rainbow2.removeClass('off');
+    rainbow2.addClass('on');
 
     console.log('Squeaker tube pulled from original position');
 
@@ -322,6 +339,11 @@ function squeakerPull(part, currentStatus) {
     squeakerIcon.removeClass('on');
     squeakerIcon.addClass('off');
 
+    rainbow1.removeClass('on');
+    rainbow1.addClass('off');
+
+    rainbow2.removeClass('on');
+    rainbow2.addClass('off');
 
     console.log('Squeaker tube returned to start');
 
@@ -338,6 +360,7 @@ function duckDomeLever(part, currentStatus) {
   var leverIcon = $('.icon.leverIcon');
   var leverImage = $('.function.leverImage');
   var duckDomeImage = $('.function.duckDomeImage');
+  var bounceBallImage = $('.function.bounceBallImage');
   var inertDomeIcon = $('.icon.inertDomeIcon'); 
   
   var notificationSoundDissolve = $('#notification-sound4Dissolve')[0];
@@ -356,6 +379,10 @@ function duckDomeLever(part, currentStatus) {
       duckDomeImage.removeClass('initial');
     }
 
+    if (bounceBallImage.hasClass('initial')) {
+      bounceBallImage.removeClass('initial');
+    }
+
     if (inertDomeIcon.hasClass('initial')) {
       inertDomeIcon.removeClass('initial');
     }
@@ -372,7 +399,10 @@ function duckDomeLever(part, currentStatus) {
     duckDomeImage.removeClass('off');
     duckDomeImage.addClass('on');
 
-    console.log('Duck Dome Unveiled');
+    bounceBallImage.removeClass('off');
+    bounceBallImage.addClass('on');
+
+    console.log('Bouncing Ball revealed');
 
     // Play the sound once when activating
     if (notificationSoundDissolve.paused) {
@@ -390,7 +420,10 @@ function duckDomeLever(part, currentStatus) {
     duckDomeImage.removeClass('on');
     duckDomeImage.addClass('off');
 
-    console.log('Duck Dome Shrouded');
+    bounceBallImage.removeClass('on');
+    bounceBallImage.addClass('off');
+
+    console.log('Dome Shrouded');
 
     // Pause the sound only if it's currently playing
     if (notificationSoundBuild.paused) {
