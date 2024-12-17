@@ -1449,7 +1449,7 @@ body {
     animation: none;
     background: #0080009c;
     animation: None;
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
 }
 
 .orangeSliderIcon.off {
