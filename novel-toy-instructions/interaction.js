@@ -129,7 +129,7 @@ function duckSqueak(part, currentStatus) {
   var whiteDuckImage = $('.function.whiteDuckImage');
   var inertDuckIcon = $('.icon.inertDuckIcon');
   var notificationSound = $('#notification-sound1')[0];
-  notificationSound.volume = 0.35;
+  notificationSound.volume = 0.15;
 
   // Check if the image has the 'initial' class and remove it
   if (whiteDuckImage.hasClass('initial')) {
@@ -288,7 +288,7 @@ function squeakerPull(part, currentStatus) {
   var squeakerIcon = $('.icon.squeakerIcon');
   var notificationSound = $('#notification-sound3')[0];
   var notificationSoundR = $('#notification-sound3R')[0];
-  notificationSoundR.volume = 0.4;
+  notificationSoundR.volume = 0.1;
 
   var rainbow1 = $('.function.rainbow1');
   var rainbow2 = $('.function.rainbow2');
@@ -383,7 +383,7 @@ function duckDomeLever(part, currentStatus) {
   var notificationSoundBuild = $('#notification-sound4Build')[0];
 
   var notificationSoundB = $('#notification-sound4Ball')[0];
-  notificationSoundB.volume = 0.2;
+  notificationSoundB.volume = 0.25;
   
     // Check if the image has the 'initial' class and remove it
     if (leverIcon.hasClass('initial')) {
