@@ -287,6 +287,8 @@ function squeakerPull(part, currentStatus) {
   var squeakerImage = $('.function.squeakerImage');
   var squeakerIcon = $('.icon.squeakerIcon');
   var notificationSound = $('#notification-sound3')[0];
+  var notificationSoundR = $('#notification-sound3R')[0];
+  notificationSoundR.volume = 0.4;
 
   var rainbow1 = $('.function.rainbow1');
   var rainbow2 = $('.function.rainbow2');
@@ -331,6 +333,14 @@ function squeakerPull(part, currentStatus) {
       notificationSound.currentTime = 0; // Reset audio to the beginning
       notificationSound.loop = false; // Set to only play on activation
     }
+
+    // Play the sound once when activating
+
+    // rainbow pinwheel crank
+    if (notificationSoundR.paused) {
+      notificationSoundR.play();
+      notificationSoundR.loop = true; // 
+    }
   } else {
     // If the current status is 'on', return to starting state
     squeakerImage.removeClass('on');
@@ -346,6 +356,12 @@ function squeakerPull(part, currentStatus) {
     rainbow2.addClass('off');
 
     console.log('Squeaker tube returned to start');
+
+    // Pause the sound only if it's currently playing
+    if (!notificationSoundR.paused) {
+      notificationSoundR.pause();
+      notificationSoundR.currentTime = 0; // Reset audio to the beginning
+    }
 
     // Pause the sound only if it's currently playing
     if (notificationSound.paused) {
@@ -365,6 +381,9 @@ function duckDomeLever(part, currentStatus) {
   
   var notificationSoundDissolve = $('#notification-sound4Dissolve')[0];
   var notificationSoundBuild = $('#notification-sound4Build')[0];
+
+  var notificationSoundB = $('#notification-sound4Ball')[0];
+  notificationSoundB.volume = 0.2;
   
     // Check if the image has the 'initial' class and remove it
     if (leverIcon.hasClass('initial')) {
@@ -409,6 +428,13 @@ function duckDomeLever(part, currentStatus) {
       notificationSoundDissolve.play();
       notificationSoundDissolve.loop = false;
     }
+
+    // ball bouncing in dome
+    if (notificationSoundB.paused) {
+      notificationSoundB.play();
+      notificationSoundB.loop = true; // 
+    }
+    
   } else {
     // If the current status is 'on', return to starting state
     leverIcon.removeClass('on');
@@ -429,6 +455,12 @@ function duckDomeLever(part, currentStatus) {
     if (notificationSoundBuild.paused) {
       notificationSoundBuild.play();
       notificationSoundBuild.loop = false; 
+    }
+
+    // Pause the sound only if it's currently playing
+    if (!notificationSoundB.paused) {
+      notificationSoundB.pause();
+      notificationSoundB.currentTime = 0; // Reset audio to the beginning
     }
   }
 }

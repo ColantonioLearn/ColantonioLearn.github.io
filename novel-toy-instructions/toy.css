@@ -745,7 +745,7 @@ body {
     opacity: 0.8;
     bottom: 25%;
     left: 39.6%;
-    animation: ballBounce 7s infinite;
+    animation: ballBounce 9s infinite;
 }
 
 @keyframes domeDissolve {
