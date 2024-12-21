@@ -635,6 +635,9 @@ function spinOrangePinwheel(part, currentStatus) {
       // Fail to activate on the other half of clicks 
       } else {
         console.log('Coin flip failed');
+        boxKnobPin++;
+        console.log('BoxToy knob failed activations:');
+        console.log(boxKnobPin);
       }
       
     } else {
@@ -720,6 +723,9 @@ function boxLightOn(part, currentStatus) {
 
         } else {
           console.log('Coin flip failed');
+          boxLight++;
+          console.log('BoxToy light switch failed activations:');
+          console.log(boxLight);
         }
 
       } else {
@@ -806,6 +812,9 @@ function cordSpinWheel(part, currentStatus) {
         // Fail to activate on the other half of clicks 
         } else {
           console.log('Coin flip failed');
+          boxCordPin++;
+          console.log('BoxToy cord pull failed activations:');
+          console.log(boxCordPin);
         }
 
       } else {
@@ -849,87 +858,106 @@ function rattleMarbles(part, currentStatus) {
     // Check if the image has the 'initial' class and remove it
     if (marbleButtonIcon.hasClass('initial')) {
       marbleButtonIcon.removeClass('initial');
-    }
+      console.log('First click on button for marble rattle');      
+    } else {
 
-    if (marbleButtonImage.hasClass('initial')) {
-      marbleButtonImage.removeClass('initial');
-    }
+      // Check the currentStatus to determine the action
+      if (marbleButtonIcon.hasClass('off')) {
 
-    if (orangeMarbleImage.hasClass('initial')) {
-      orangeMarbleImage.removeClass('initial');
-    }
-    
-    if (blueMarbleImage.hasClass('initial')) {
-      blueMarbleImage.removeClass('initial');
-    }
-
-    if (orangeMarbleIcon.hasClass('initial')) {
-      orangeMarbleIcon.removeClass('initial');
-    }
-
-    if (blueMarbleIcon.hasClass('initial')) {
-      blueMarbleIcon.removeClass('initial');
-    }
+        // Flip a coin to decide if it activates
+        coinFlipNow = Math.random();
+        console.log('Coin flip for marble rattle:');
+        console.log(coinFlipNow);
   
-  // Check the currentStatus to determine the action
-  if (currentStatus === 'off') {
-    // Flip switch flip if in starting position to "on" position
-    marbleButtonIcon.removeClass('off');
-    marbleButtonIcon.addClass('on');
+        // Activate only half the time it is clicked after the first attempt
+        if (coinFlipNow >= 0.5) { 
 
-    marbleButtonImage.removeClass('off');
-    marbleButtonImage.addClass('on');
+          // Flip switch flip if in starting position to "on" position
+          if (marbleButtonImage.hasClass('initial')) {
+            marbleButtonImage.removeClass('initial');
+          }
+      
+          if (orangeMarbleImage.hasClass('initial')) {
+            orangeMarbleImage.removeClass('initial');
+          }
+          
+          if (blueMarbleImage.hasClass('initial')) {
+            blueMarbleImage.removeClass('initial');
+          }
+      
+          if (orangeMarbleIcon.hasClass('initial')) {
+            orangeMarbleIcon.removeClass('initial');
+          }
+      
+          if (blueMarbleIcon.hasClass('initial')) {
+            blueMarbleIcon.removeClass('initial');
+          }
 
-    orangeMarbleImage.removeClass('off');
-    orangeMarbleImage.addClass('on');
+          marbleButtonIcon.removeClass('off');
+          marbleButtonIcon.addClass('on');
 
-    blueMarbleImage.removeClass('off');
-    blueMarbleImage.addClass('on');
+          marbleButtonImage.removeClass('off');
+          marbleButtonImage.addClass('on');
 
-    orangeMarbleIcon.removeClass('off');
-    orangeMarbleIcon.addClass('on');
+          orangeMarbleImage.removeClass('off');
+          orangeMarbleImage.addClass('on');
 
-    blueMarbleIcon.removeClass('off');
-    blueMarbleIcon.addClass('on');
+          blueMarbleImage.removeClass('off');
+          blueMarbleImage.addClass('on');
 
-    console.log('Air pushes marbles up, rattle');
+          orangeMarbleIcon.removeClass('off');
+          orangeMarbleIcon.addClass('on');
 
-    // Play the sound once when activating
-    if (notificationSound.paused) {
-      notificationSound.play();
-      notificationSound.loop = true;
-    }
-   } else {
-    // If the current status is 'on', return to starting state
-    marbleButtonIcon.removeClass('on');
-    marbleButtonIcon.addClass('off');
+          blueMarbleIcon.removeClass('off');
+          blueMarbleIcon.addClass('on');
 
-    marbleButtonImage.removeClass('on');
-    marbleButtonImage.addClass('off');
+          console.log('Air pushes marbles up, rattle');
 
-    orangeMarbleImage.removeClass('on');
-    orangeMarbleImage.addClass('off');
+          // Play the sound once when activating
+          if (notificationSound.paused) {
+            notificationSound.play();
+            notificationSound.loop = true;
+          } 
 
-    blueMarbleImage.removeClass('on');
-    blueMarbleImage.addClass('off');
+       // Fail to activate on the other half of clicks 
+        } else {
+          console.log('Coin flip failed');
+          boxMarbles++;
+          console.log('BoxToy marble button failed activations:');
+          console.log(boxMarbles);
+        }
+      } else {
+        // If the current status is 'on', return to starting state
+        marbleButtonIcon.removeClass('on');
+        marbleButtonIcon.addClass('off');
 
-    orangeMarbleIcon.removeClass('on');
-    orangeMarbleIcon.addClass('off');
+        marbleButtonImage.removeClass('on');
+        marbleButtonImage.addClass('off');
 
-    blueMarbleIcon.removeClass('on');
-    blueMarbleIcon.addClass('off');
+        orangeMarbleImage.removeClass('on');
+        orangeMarbleImage.addClass('off');
 
-    console.log('Air turns off, marbles drop');
+        blueMarbleImage.removeClass('on');
+        blueMarbleImage.addClass('off');
 
-    // Pause the sound only if it's currently playing
-    setTimeout(function () {
-      if (!notificationSound.paused) {
-          notificationSound.pause();
-          notificationSound.currentTime = 0; // Reset audio to the beginning
+        orangeMarbleIcon.removeClass('on');
+        orangeMarbleIcon.addClass('off');
+
+        blueMarbleIcon.removeClass('on');
+        blueMarbleIcon.addClass('off');
+
+        console.log('Air turns off, marbles drop');
+
+        // Pause the sound only if it's currently playing
+        setTimeout(function () {
+          if (!notificationSound.paused) {
+              notificationSound.pause();
+              notificationSound.currentTime = 0; // Reset audio to the beginning
+          }
+        }, 410);
+        // delay by sound pausing by 0.41s, just over length of drop animation
       }
-    }, 410);
-    // delay by sound pausing by 0.41s, just over length of drop animation
-  }
+    }
 }
 
 // Slide orange knob up and down
