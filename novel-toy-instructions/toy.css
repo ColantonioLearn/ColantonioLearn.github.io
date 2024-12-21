@@ -265,7 +265,7 @@ body {
     rotate: 2deg;
 }
 
-.function.whiteDuckImage {
+.whiteDuckImage.off {
     right: 13.4%;
     top: 19.3%;
     height: 16.5vh;
@@ -275,7 +275,21 @@ body {
     width: auto;
     opacity: 1;
     animation: none;
+    display: none;
 }
+
+.whiteDuckImage.on {
+    right: 13.4%;
+    top: 19.3%;
+    height: 16.5vh;
+    position: absolute;
+    /* overflow: hidden; */
+    z-index: 11;
+    width: auto;
+    opacity: 1;
+    animation: squeakAnimation 1.2s linear;
+}
+
 
     /* Keyframes for the duck squeak animation */
 @keyframes squeakAnimation {
@@ -300,14 +314,14 @@ body {
 }
 
     /* Styles for the squeak animation */
-.squeak.on {
+/* .squeak.on {
     animation: squeakAnimation 1.2s linear;
-}
+} */
 
     /* Hide white duck when 'off' */
-.squeak.off {
+/* .squeak.off {
     display: none;
-}
+} */
 
 .inertDuckIcon.on {
     clip-path: polygon(77% 14%, 73% 6%, 66% 3%, 60% 3%, 55% 5%, 49% 11%, 47% 18%, 46% 25%, 49% 31%, 52% 37%, 53% 41%, 46% 43%, 30% 45%, 23% 41%, 19% 44%, 16% 52%, 19% 60%, 22% 64%, 30% 69%, 37% 73%, 48% 75%, 58% 76%, 68% 77%, 78% 73%, 85% 69%, 88% 67%, 87% 55%, 85% 48%, 78% 40%, 78% 36%, 83% 33%, 86% 29%, 83% 25%, 87% 19%, 85% 14%);
