@@ -60,6 +60,9 @@ function duckSqueak(part, currentStatus) {
         // Fail to activate on the other half of clicks 
         } else {
           console.log('Coin flip failed');
+          tubeDuck++;
+          console.log('TubeToy duck failed activations:');
+          console.log(tubeDuck);
         }
       } else {
           // If the current status is 'on', stop animation and hide the image

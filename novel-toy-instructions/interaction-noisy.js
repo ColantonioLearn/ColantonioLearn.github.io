@@ -26,6 +26,16 @@ function pauseAllAudio() {
 
 pauseAllAudio();
 
+// counters for activation failures
+let tubeDuck = 0;
+let tubeStar = 0;
+let tubeBall = 0;
+let tubeSqueak = 0;
+let boxKnobPin = 0;
+let boxCordPin = 0;
+let boxMarbles = 0;
+let boxLight = 0;
+
 $(document).ready(function () {
   console.log('Document ready');
 
@@ -184,6 +194,9 @@ function duckSqueak(part, currentStatus) {
       // Fail to activate on the other half of clicks 
       } else {
         console.log('Coin flip failed');
+        tubeDuck++;
+        console.log('TubeToy duck failed activations:');
+        console.log(tubeDuck);
       }
     } else {
         // If the current status is 'on', stop animation and hide the image
@@ -309,6 +322,9 @@ function starLight(part, currentStatus) {
         // Fail to activate on the other half of clicks 
         } else {
           console.log('Coin flip failed');
+          tubeStar++;
+          console.log('TubeToy starlight failed activations:');
+          console.log(tubeStar);
         }
       } else {
         // If the current status is 'on', return to starting state
@@ -403,6 +419,9 @@ function squeakerPull(part, currentStatus) {
         // Fail to activate on the other half of clicks 
         } else {
           console.log('Coin flip failed');
+          tubeSqueak++;
+          console.log('TubeToy squeaker failed activations:');
+          console.log(tubeSqueak);
         }        
       } else {
         // If the current status is 'on', return to starting state
@@ -514,6 +533,9 @@ function duckDomeLever(part, currentStatus) {
         // Fail to activate on the other half of clicks 
         } else {
           console.log('Coin flip failed');
+          tubeBall++;
+          console.log('TubeToy ball dome failed activations:');
+          console.log(tubeBall);
         } 
       
       } else {
@@ -554,13 +576,12 @@ function duckDomeLever(part, currentStatus) {
 //  BOX TOY FUNCTIONS
 
 // Orange Pinwheel function
-var isSpinning = false; // Flag to track if spinning animation is in progress
 function spinOrangePinwheel(part, currentStatus) {
-  console.log('Spin Orange Pinwheel');
+  
 
   // adding rotation of blue knob
   var blueKnobImage = $('.function.blueKnobImage');
-  var blueKnobIcon = $('.function.blueKnobIcon ');
+  var blueKnobIcon = $('.icon.blueKnobIcon ');
 
   var orangePinwheelImage = $('.function.orangePinwheelImage');
   var orangePinwheelIcon = $('.icon.orangePinwheelIcon');  // Corrected selector
@@ -568,61 +589,77 @@ function spinOrangePinwheel(part, currentStatus) {
   notificationSound.volume = 0.7;
 
   // Check if the image has the 'initial' class and remove it
-  if (orangePinwheelImage.hasClass('initial')) {
-    orangePinwheelImage.removeClass('initial');
-    orangePinwheelIcon.removeClass('initial');
-    blueKnobImage.removeClass('initial');
-  }
-
-  // Toggle spinning elements based on status
-  if (currentStatus === 'off' && !isSpinning) {
-    // Start spinning animation
-    isSpinning = true;
+  if (blueKnobIcon.hasClass('initial')) {
     
-    blueKnobImage.addClass('on');
-    blueKnobImage.removeClass('off');
+    blueKnobIcon.removeClass('initial');
 
-    blueKnobIcon.addClass('on');
-    blueKnobIcon.removeClass('off');
-
-    orangePinwheelImage.addClass('on');
-    orangePinwheelImage.removeClass('off');
-    orangePinwheelImage.addClass('spin');
-
-    orangePinwheelIcon.addClass('on');
-    orangePinwheelIcon.removeClass('off');
-    orangePinwheelIcon.addClass('spin');
-    
-
-    // Play the sound if it's not already playing
-    if (notificationSound.paused) {
-      notificationSound.play();
-      notificationSound.loop = true; // Set to loop continuously
-    }
+    console.log('First click on blue knob for orange pinwheel');
   } else {
-    
-    // If the current status is 'on', stop spinning and pause sound
-    // Stop spinning animation
-    isSpinning = false;
-    
-    blueKnobImage.addClass('off');
-    blueKnobImage.removeClass('on');
+    // Toggle spinning elements based on status
+    if (blueKnobIcon.hasClass('off')) {
 
-    blueKnobIcon.addClass('off');
-    blueKnobIcon.removeClass('on');
+      // Flip a coin to decide if it activates
+      coinFlipNow = Math.random();
+      console.log('Coin flip for orange pinwheel:');
+      console.log(coinFlipNow);
 
-    orangePinwheelImage.addClass('off');
-    orangePinwheelImage.removeClass('on');
-    orangePinwheelImage.removeClass('spin');
+      // Activate only half the time it is clicked after the first attempt
+      if (coinFlipNow >= 0.5) {
 
-    orangePinwheelIcon.addClass('off');
-    orangePinwheelIcon.removeClass('on');
-    orangePinwheelIcon.removeClass('spin');  // Corrected line
+        console.log('Spin Orange Pinwheel');
+      
+        orangePinwheelImage.removeClass('initial');
+        orangePinwheelIcon.removeClass('initial');
+        blueKnobImage.removeClass('initial');
+  
+        blueKnobImage.addClass('on');
+        blueKnobImage.removeClass('off');
+  
+        blueKnobIcon.addClass('on');
+        blueKnobIcon.removeClass('off');
+  
+        orangePinwheelImage.addClass('on');
+        orangePinwheelImage.removeClass('off');
+        orangePinwheelImage.addClass('spin');
+  
+        orangePinwheelIcon.addClass('on');
+        orangePinwheelIcon.removeClass('off');
+        orangePinwheelIcon.addClass('spin');
+        
+        // Play the sound if it's not already playing
+        if (notificationSound.paused) {
+          notificationSound.play();
+          notificationSound.loop = true; // Set to loop continuously
+        }
 
-    // Pause the sound only if it's currently playing
-    if (!notificationSound.paused) {
-      notificationSound.pause();
-      notificationSound.currentTime = 0; // Reset audio to the beginning
+      // Fail to activate on the other half of clicks 
+      } else {
+        console.log('Coin flip failed');
+      }
+      
+    } else {
+      
+      // If the current status is 'on', stop spinning and pause sound
+      
+      blueKnobImage.addClass('off');
+      blueKnobImage.removeClass('on');
+
+      blueKnobIcon.addClass('off');
+      blueKnobIcon.removeClass('on');
+
+      orangePinwheelImage.addClass('off');
+      orangePinwheelImage.removeClass('on');
+      orangePinwheelImage.removeClass('spin');
+
+      orangePinwheelIcon.addClass('off');
+      orangePinwheelIcon.removeClass('on');
+      orangePinwheelIcon.removeClass('spin');  // Corrected line
+
+      // Pause the sound only if it's currently playing
+      if (!notificationSound.paused) {
+        notificationSound.pause();
+        notificationSound.currentTime = 0; // Reset audio to the beginning
+      }
     }
   }
 }
@@ -637,10 +674,6 @@ function boxLightOn(part, currentStatus) {
   notificationSound.volume = 0.45;
   
     // Check if the image has the 'initial' class and remove it
-    if (middleSwitchIcon.hasClass('initial')) {
-      middleSwitchIcon.removeClass('initial');
-    }
-
     if (middleSwitchImage.hasClass('initial')) {
       middleSwitchImage.removeClass('initial');
     }
@@ -648,45 +681,69 @@ function boxLightOn(part, currentStatus) {
     if (boxLightImage.hasClass('initial')) {
       boxLightImage.removeClass('initial');
     }
+
+    if (middleSwitchIcon.hasClass('initial')) {
+
+      middleSwitchIcon.removeClass('initial');
+      
+      console.log('First click on switch for box light');
+    } else {
+      // Check the currentStatus to determine the action
+      if (middleSwitchIcon.hasClass('off')) {
+
+        // Flip a coin to decide if it activates
+        coinFlipNow = Math.random();
+        console.log('Coin flip for box light:');
+        console.log(coinFlipNow);
   
-  // Check the currentStatus to determine the action
-  if (currentStatus === 'off') {
-    // Flip switch flip if in starting position to "on" position
-    middleSwitchIcon.removeClass('off');
-    middleSwitchIcon.addClass('on');
+        // Activate only half the time it is clicked after the first attempt
+        if (coinFlipNow >= 0.5) {
+          console.log('Coin flip successful');
 
-    middleSwitchImage.removeClass('off');
-    middleSwitchImage.addClass('on');
+          // Flip switch flip if in starting position to "on" position
+          middleSwitchIcon.removeClass('off');
+          middleSwitchIcon.addClass('on');
 
-    boxLightImage.removeClass('off');
-    boxLightImage.addClass('on');
+          middleSwitchImage.removeClass('off');
+          middleSwitchImage.addClass('on');
 
-    console.log('Box Light Button Pressed');
+          boxLightImage.removeClass('off');
+          boxLightImage.addClass('on');
 
-    // Play the sound when activating
-    if (notificationSound.paused) {
-      notificationSound.play();
-      notificationSound.loop = true; // Set to loop
+          console.log('Box Light Button Pressed');
+
+          // Play the sound when activating
+          if (notificationSound.paused) {
+            notificationSound.play();
+            notificationSound.loop = true; // Set to loop
+          }
+
+        } else {
+          console.log('Coin flip failed');
+        }
+
+      } else {
+        // If the current status is 'on', return to starting state
+        middleSwitchIcon.removeClass('on');
+        middleSwitchIcon.addClass('off');
+
+        middleSwitchImage.removeClass('on');
+        middleSwitchImage.addClass('off');
+
+        boxLightImage.removeClass('on');
+        boxLightImage.addClass('off');
+
+        console.log('Box Light turned off');
+
+        // Pause the sound only if it's currently playing
+        if (!notificationSound.paused) {
+          notificationSound.pause();
+          notificationSound.currentTime = 0; // Reset audio to the beginning
+        }
+      }
     }
-   } else {
-    // If the current status is 'on', return to starting state
-    middleSwitchIcon.removeClass('on');
-    middleSwitchIcon.addClass('off');
-
-    middleSwitchImage.removeClass('on');
-    middleSwitchImage.addClass('off');
-
-    boxLightImage.removeClass('on');
-    boxLightImage.addClass('off');
-
-    console.log('Box Light Switch "un-pressed"');
-
-    // Pause the sound only if it's currently playing
-    if (!notificationSound.paused) {
-      notificationSound.pause();
-      notificationSound.currentTime = 0; // Reset audio to the beginning
-    }
-  }
+  
+  
 }
 
 // Blue Cord & Rainbow Pinwheel
@@ -700,58 +757,80 @@ function cordSpinWheel(part, currentStatus) {
   var notificationSoundC = $('#notification-sound2c')[0];
   
     // Check if the image has the 'initial' class and remove it
-    if (blueCordIcon.hasClass('initial')) {
+    
+      if (blueCordIcon.hasClass('initial')) {
       blueCordIcon.removeClass('initial');
-    }
-
-    if (blueCordImage.hasClass('initial')) {
-      blueCordImage.removeClass('initial');
-    }
-
-    if (rainbowPinwheelImage.hasClass('initial')) {
-      rainbowPinwheelImage.removeClass('initial');
-    }
+      console.log('First click on button on blue cord for rainbow pinwheel');
+    } else {
+      // Check the currentStatus to determine the action
+      if (blueCordIcon.hasClass('off')) {
   
-  // Check the currentStatus to determine the action
-  if (currentStatus === 'off') {
-    // Flip switch flip if in starting position to "on" position
-    blueCordIcon.removeClass('off');
-    blueCordIcon.addClass('on');
+        // Flip a coin to decide if it activates
+        coinFlipNow = Math.random();
+        console.log('Coin flip for blue cord pull:');
+        console.log(coinFlipNow);
+  
+        // Activate only half the time it is clicked after the first attempt
+        if (coinFlipNow >= 0.5) {
 
-    blueCordImage.removeClass('off');
-    blueCordImage.addClass('on');
+          if (blueCordImage.hasClass('initial')) {
+            blueCordImage.removeClass('initial');
+          }
+      
+          if (rainbowPinwheelImage.hasClass('initial')) {
+            rainbowPinwheelImage.removeClass('initial');
+          }
 
-    rainbowPinwheelImage.removeClass('off');
-    rainbowPinwheelImage.addClass('on');
+          console.log('Coin flip successful');
 
-    console.log('Cord pulled, rainbow wheel spinning');
+          // Flip switch flip if in starting position to "on" position
+          blueCordIcon.removeClass('off');
+          blueCordIcon.addClass('on');
 
-    // Play the sound once when activating
+          blueCordImage.removeClass('off');
+          blueCordImage.addClass('on');
 
-    // rainbow pinwheel crank
-    if (notificationSoundC.paused) {
-      notificationSoundC.play();
-      notificationSoundC.loop = true; // 
+          rainbowPinwheelImage.removeClass('off');
+          rainbowPinwheelImage.addClass('on');
+
+          console.log('Cord pulled, rainbow wheel spinning');
+
+          // Play the sound once when activating
+
+          // rainbow pinwheel crank
+          if (notificationSoundC.paused) {
+            notificationSoundC.play();
+            notificationSoundC.loop = true; // 
+          }
+
+        // Fail to activate on the other half of clicks 
+        } else {
+          console.log('Coin flip failed');
+        }
+
+      } else {
+        // If the current status is 'on', return to starting state
+        blueCordIcon.removeClass('on');
+        blueCordIcon.addClass('off');
+
+        blueCordImage.removeClass('on');
+        blueCordImage.addClass('off');
+
+        rainbowPinwheelImage.removeClass('on');
+        rainbowPinwheelImage.addClass('off');
+
+        console.log('Cord pulled, rainbow wheel stopped');
+
+        // Pause the sound only if it's currently playing
+        if (!notificationSoundC.paused) {
+          notificationSoundC.pause();
+          notificationSoundC.currentTime = 0; // Reset audio to the beginning
+        }
+      }
     }
-   } else {
-    // If the current status is 'on', return to starting state
-    blueCordIcon.removeClass('on');
-    blueCordIcon.addClass('off');
 
-    blueCordImage.removeClass('on');
-    blueCordImage.addClass('off');
-
-    rainbowPinwheelImage.removeClass('on');
-    rainbowPinwheelImage.addClass('off');
-
-    console.log('Cord pulled, rainbow wheel stopped');
-
-    // Pause the sound only if it's currently playing
-    if (!notificationSoundC.paused) {
-      notificationSoundC.pause();
-      notificationSoundC.currentTime = 0; // Reset audio to the beginning
-    }
-  }
+  
+  
 }
 
 // Blue & Orange Marbles
