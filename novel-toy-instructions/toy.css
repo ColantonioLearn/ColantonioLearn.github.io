@@ -21,9 +21,9 @@
 .icon {
     background: rgba(0, 0, 255, 0.282);
     position: absolute;
-    z-index: 10 !important;
+    z-index: 11 !important;
     /* during dev */
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
     /* during prod/deploy */
     opacity: 0 !important;
 }
@@ -126,15 +126,25 @@ body {
 }
 
 .icon.blank-space-icon {
-    z-index: 8 !important;
+    z-index: 5 !important;
     /* remove bg color at deploy */
     background-color: gray !important;
     top: 0%;
-    width: 65%;
-    height: 75%;
+    width: 100%;
+    height: 100%;
     position: fixed;
     /* during dev */
-    opacity: 0.5 !important;
+    opacity: 0.25 !important;
+    /* during production */
+    opacity: 0 !important;
+}
+
+.icon.toyBG {
+    z-index: 9 !important;
+    /* remove bg color at deploy */
+    background-color: rgb(0, 0, 0) !important;
+    /* during dev */
+    opacity: 0.6 !important;
     /* during production */
     opacity: 0 !important;
 }
@@ -831,6 +841,218 @@ body {
     left: 32.08%;
     background: rgba(17, 0, 255, 0.704) !important;
 }
+
+/* inert BG pieces */
+
+#greenBoard {
+    clip-path: polygon(7% 71%, 100% 72%, 100% 100%, -3% 100%);
+    right: 16.4%;
+    bottom: 15.3%;
+    height: 62.5vh;
+    width: 71.5vh;
+    position: absolute;
+    z-index: 6 !important;
+    background: #00ffff94 !important;
+    opacity: 0 !important;
+}
+
+#BLBlueHolder {
+    clip-path: ellipse(25% 31% at 50% 50%);
+    left: 10.3%;
+    bottom: 18.7%;
+    height: 9.8vh;
+    width: 13.3vh;
+    position: absolute;
+    z-index: 10;
+    /* background: #00ffff94 !important; */
+}
+
+#BRBlueHolder {
+    clip-path: ellipse(25% 31% at 50% 50%);
+    right: 33.7%;
+    bottom: 18.7%;
+    height: 9.8vh;
+    width: 13.3vh;
+    position: absolute;
+    z-index: 10;
+    /* background: #00ffff94 !important; */
+}
+
+#TRBlueHolder {
+    clip-path: ellipse(25% 31% at 50% 50%);
+    right: 35.9%;
+    bottom: 25.7%;
+    height: 8.8vh;
+    width: 11.3vh;
+    position: absolute;
+    z-index: 10;
+    /* background: #00ffff94 !important; */
+}
+
+#redTube {
+    clip-path: polygon(18% 95%, 12% 37%, 34% 9%, 53% 29%, 38% 46%, 39% 95%, 34% 99%, 22% 99%);
+    left: 12.4%;
+    top: 12.3%;
+    height: 50.5vh;
+    width: 51.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#whiteBase {
+    clip-path: polygon(49% 44%, 75% 43%, 98% 29%, 100% 70%, 98% 75%, 79% 85%, 58% 89%, 21% 87%, 18% 85%, 6% 80%, 0% 28%, 22% 43%);
+    left: 20.4%;
+    bottom: 21.3%;
+    height: 18.5vh;
+    width: 13.3vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#yellowInertKnob {
+    clip-path: polygon(49% 32%, 75% 32%, 94% 29%, 100% 70%, 98% 81%, 79% 87%, 58% 89%, 21% 87%, 18% 85%, 6% 80%, 11% 27%, 44% 32%);
+    left: 23.4%;
+    bottom: 24.3%;
+    height: 7.5vh;
+    width: 6.3vh;
+    position: absolute;
+    z-index: 10;
+    /* background: #00ffff94 !important; */
+}
+
+#redTubeBall {
+    clip-path: polygon(26% 35%, 29% 45%, 41% 65%, 52% 73%, 57% 66%, 60% 56%, 57% 44%, 49% 36%, 31% 33%);
+    left: 28%;
+    top: 9.3%;
+    height: 23.5vh;
+    width: 17vh;
+    rotate: -20deg;
+    position: absolute;
+    z-index: 10 !important;
+    /* background: #00ffff94 !important; */
+}
+
+#TubeBlueHolder {
+    clip-path: ellipse(25% 31% at 50% 50%);
+    left: 19.3%;
+    top: 23.7%;
+    height: 14.8vh;
+    width: 15.3vh;
+    rotate: -40deg;
+    position: absolute;
+    z-index: 10;
+    background: #00ffff94 !important;
+}
+
+#yellowTube {
+    clip-path: polygon(18% 99%, 12% 41%, 38% 13%, 56% 32%, 39% 49%, 41% 95%, 33% 99%, 26% 101%);
+    right: 8.4%;
+    top: 16.3%;
+    height: 39.5vh;
+    width: 42.5vh;
+    position: absolute;
+    transform: scaleX(-1);
+    rotate: 45deg;
+    /* opacity: 0 !important; */
+}
+
+#purpleSwirl {
+    clip-path: polygon(61% 26%, 78% 45%, 61% 64%, 32% 58%, 33% 32%);
+    right: 20.8%;
+    top: 41.3%;
+    height: 17.5vh;
+    width: 14.5vh;
+    position: absolute;
+    transform: scaleX(-1);
+    rotate: 45deg;
+    background: #00ffff94 !important;
+    /* opacity: 0 !important; */
+}
+
+#bottomRightTube {
+    clip-path: polygon(26% 1%, 94% 54%, 108% 66%, 98% 67%, 87% 59%, 94% 59%, 73% 83%, 72% 97%, 70% 98%, 65% 95%, 64% 94%, -7% 28%, 0% 33%, 14% 13%, 16% 11%);
+    right: 8.4%;
+    bottom: 15.3%;
+    height: 23.5vh;
+    width: 27.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#midPurpTube {
+    clip-path: polygon(53% 10%, 83% 71%, 83% 75%, 85% 83%, 88% 89%, 93% 93%, 94% 91%, 89% 99%, 85% 99%, 74% 96%, 66% 81%, 60% 74%, 47% 41%, 44% 37%, 52% 23%, 50% 19%, 50% 16%, 49% 11%);
+    right: 28.4%;
+    top: 16.3%;
+    height: 46.5vh;
+    width: 66.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#topPurpTube {
+    clip-path: polygon(33% 33%, 50% 23%, 99% 41%, 57% 90%, 23% 74%, 25% 44%);
+    left: 7.4%;
+    top: 13.3%;
+    height: 19.5vh;
+    width: 19.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#rainbowTop {
+    clip-path: polygon(50% 51%, 80% 58%, 100% 68%, 50% 100%, 0% 68%, 20% 58%);
+    right: 21.7%;
+    bottom: 26%;
+    height: 12vh;
+    width: 8.6vh;
+    rotate: -51deg;
+    position: absolute;
+    z-index: 10;
+    background: #00ffff94 !important;
+}
+
+#rainbowBottom {
+    clip-path: polygon(50% 51%, 80% 58%, 100% 68%, 50% 100%, 0% 68%, 20% 58%);
+    right: 15.7%;
+    bottom: 21%;
+    height: 12vh;
+    width: 8.6vh;
+    rotate: -51deg;
+    position: absolute;
+    z-index: 10;
+    background: #00ffff94 !important;
+}
+
+#leftBlackTube {
+    clip-path: polygon(17% 26%, 28% 75%, 30% 74%, 33% 83%, 50% 77%, 45% 18%);
+    left: 2.4%;
+    top: 33.3%;
+    height: 28.5vh;
+    width: 37.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#midBlackTube {
+    clip-path: polygon(29% 37%, 32% 34%, 46% 60%, 45% 64%, 34% 61%, 24% 82%, 22% 42%);
+    left: 23.4%;
+    top: 25.3%;
+    height: 28.5vh;
+    width: 37.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
+#blueTube {
+    clip-path: polygon(44% 66%, 48% 55%, 53% 61%, 62% 57%, 72% 64%, 71% 74%, 58% 83%);
+    right: 23.4%;
+    top: 13.3%;
+    height: 44.5vh;
+    width: 37.5vh;
+    position: absolute;
+    /* opacity: 0 !important; */
+}
+
 
 /*  */
 /* TUBE TOY CSS END */

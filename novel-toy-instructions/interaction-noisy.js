@@ -41,10 +41,11 @@ $(document).ready(function () {
 
   // Add click event listeners to interactive elements
   $('.icon').click(function () {
-      // console.log('Icon clicked');
-
+      
       var part = $(this);
       var partName = part.attr('id');
+      
+      console.log('Icon clicked: ' + partName);
       
       // Retrieve toyName from the data-toy attribute of the container element
       var toyName = $('.toy-container').data('toy') || 'defaultToyName';
