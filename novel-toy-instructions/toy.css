@@ -23,9 +23,9 @@
     position: absolute;
     z-index: 11 !important;
     /* during dev */
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
     /* during prod/deploy */
-    /* opacity: 0 !important; */
+    opacity: 0 !important;
 }
 
 .play-toy-text {
@@ -134,9 +134,9 @@ body {
     height: 100%;
     position: fixed;
     /* during dev */
-    opacity: 0.25 !important;
+    /* opacity: 0.25 !important; */
     /* during production */
-    /* opacity: 0 !important; */
+    opacity: 0 !important;
 }
 
 .icon.toyBG {
@@ -144,9 +144,9 @@ body {
     /* remove bg color at deploy */
     background-color: rgb(0, 0, 0) !important;
     /* during dev */
-    opacity: 0.6 !important;
+    /* opacity: 0.6 !important; */
     /* during production */
-    /* opacity: 0 !important; */
+    opacity: 0 !important;
 }
 
 .rightArrowIcon {
