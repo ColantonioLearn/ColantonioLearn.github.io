@@ -168,8 +168,8 @@ function duckSqueak(part, currentStatus) {
       console.log('Coin flip for white duck:');
       console.log(coinFlipNow);
 
-      // Activate only half the time it is clicked after the first attempt
-      if (coinFlipNow >= 0.5) {
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
 
         console.log('Coin flip successful');
 
@@ -235,7 +235,7 @@ function flipSwitch(part, currentStatus) {
     }
   
   // Check the currentStatus to determine the action
-  if (currentStatus === 'off') {
+  if (inertToggleIcon.hasClass('off')) {
     // Flip switch flip if in starting position to "on" position
     inertToggleImage.removeClass('off');
     inertToggleImage.addClass('on');
@@ -289,63 +289,61 @@ function starLight(part, currentStatus) {
       starLightButtonIcon.removeClass('initial');
 
       console.log('First click on button for star light');
-    } else {
-
-      // Check the currentStatus to determine the action
-      if (starLightButtonIcon.hasClass('off')) {
-
-        // Flip a coin to decide if it activates
-        coinFlipNow = Math.random();
-        console.log('Coin flip for star light:');
-        console.log(coinFlipNow);
-
-        // Activate only half the time it is clicked after the first attempt
-        if (coinFlipNow >= 0.5) {
-
-          // Flip switch flip if in starting position to "on" position
-          starLightButtonIcon.removeClass('off');
-          starLightButtonIcon.addClass('on');
-
-          starLightButtonImage.removeClass('off');
-          starLightButtonImage.addClass('on');
-
-          starLightImage.removeClass('off');
-          starLightImage.addClass('on');
-
-          console.log('Star Light Button Pressed');
-
-          // Play the sound once when activating
-          if (notificationSound.paused) {
-            notificationSound.play();
-            notificationSound.loop = true;
-          }
-        // Fail to activate on the other half of clicks 
-        } else {
-          console.log('Coin flip failed');
-          tubeStar++;
-          console.log('TubeToy starlight failed activations:');
-          console.log(tubeStar);
-        }
-      } else {
-        // If the current status is 'on', return to starting state
-        starLightButtonImage.removeClass('on');
-        starLightButtonImage.addClass('off');
-
-        starLightImage.removeClass('on');
-        starLightImage.addClass('off');
-
-        starLightButtonIcon.removeClass('on');
-        starLightButtonIcon.addClass('off');
-
-        console.log('Star Light turned off');
-
-        // Pause the sound only if it's currently playing
-        if (!notificationSound.paused) {
-          notificationSound.pause();
-          notificationSound.currentTime = 0; // Reset audio to the beginning
-        }
-      }
     }
+
+    if (starLightButtonIcon.hasClass('off')) {
+
+      // Flip a coin to decide if it activates
+      coinFlipNow = Math.random();
+      console.log('Coin flip for star light:');
+      console.log(coinFlipNow);
+
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
+
+        // Flip switch flip if in starting position to "on" position
+        starLightButtonIcon.removeClass('off');
+        starLightButtonIcon.addClass('on');
+
+        starLightButtonImage.removeClass('off');
+        starLightButtonImage.addClass('on');
+
+        starLightImage.removeClass('off');
+        starLightImage.addClass('on');
+
+        console.log('Star Light Button Pressed');
+
+        // Play the sound once when activating
+        if (notificationSound.paused) {
+          notificationSound.play();
+          notificationSound.loop = true;
+        }
+      // Fail to activate on the other half of clicks 
+      } else {
+        console.log('Coin flip failed');
+        tubeStar++;
+        console.log('TubeToy starlight failed activations:');
+        console.log(tubeStar);
+      }
+    } else {
+      // If the current status is 'on', return to starting state
+      starLightButtonImage.removeClass('on');
+      starLightButtonImage.addClass('off');
+
+      starLightImage.removeClass('on');
+      starLightImage.addClass('off');
+
+      starLightButtonIcon.removeClass('on');
+      starLightButtonIcon.addClass('off');
+
+      console.log('Star Light turned off');
+
+      // Pause the sound only if it's currently playing
+      if (!notificationSound.paused) {
+        notificationSound.pause();
+        notificationSound.currentTime = 0; // Reset audio to the beginning
+      }
+    }    
 }
 
 function squeakerPull(part, currentStatus) {
@@ -353,7 +351,7 @@ function squeakerPull(part, currentStatus) {
   var squeakerIcon = $('.icon.squeakerIcon');
   var notificationSound = $('#notification-sound3')[0];
   var notificationSoundR = $('#notification-sound3R')[0];
-  notificationSoundR.volume = 0.2;
+  notificationSoundR.volume = 0.28;
 
   var rainbow1 = $('.function.rainbow1');
   var rainbow2 = $('.function.rainbow2');
@@ -376,85 +374,82 @@ function squeakerPull(part, currentStatus) {
 
       console.log('First click on yellow squeaker tube');
 
-    } else {
+    }
 
-      // Check the currentStatus to determine the action
-      if (squeakerIcon.hasClass('off')) {
+    // Check the currentStatus to determine the action
+    if (squeakerIcon.hasClass('off')) {
 
-        // Flip a coin to decide if it activates
-        coinFlipNow = Math.random();
-        console.log('Coin flip squeaker tube:');
-        console.log(coinFlipNow);
+      // Flip a coin to decide if it activates
+      coinFlipNow = Math.random();
+      console.log('Coin flip squeaker tube:');
+      console.log(coinFlipNow);
 
-        // Activate only half the time it is clicked after the first attempt
-        if (coinFlipNow >= 0.5) {
-          // Flip switch flip if in starting position to "on" position
-          squeakerImage.removeClass('off');
-          squeakerImage.addClass('on');
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
+        // Flip switch flip if in starting position to "on" position
+        squeakerImage.removeClass('off');
+        squeakerImage.addClass('on');
 
-          squeakerIcon.removeClass('off');
-          squeakerIcon.addClass('on');
+        squeakerIcon.removeClass('off');
+        squeakerIcon.addClass('on');
 
-          rainbow1.removeClass('off');
-          rainbow1.addClass('on');
+        rainbow1.removeClass('off');
+        rainbow1.addClass('on');
 
-          rainbow2.removeClass('off');
-          rainbow2.addClass('on');
+        rainbow2.removeClass('off');
+        rainbow2.addClass('on');
 
-          console.log('Squeaker tube pulled, rainbow gems shimmer');
+        console.log('Squeaker tube pulled, rainbow gems shimmer');
 
-          // Play the sounds once when activating
+        // Play the sounds once when activating
 
-          // squeaker tube sound
-          if (notificationSound.paused) {
-            notificationSound.play();
-            notificationSound.currentTime = 0; // Reset audio to the beginning
-            notificationSound.loop = false; // Set to only play on activation
-          }
-          // Rainbow gems shimmer
-          if (notificationSoundR.paused) {
-            notificationSoundR.play();
-            notificationSoundR.loop = true; // 
-          }
-        // Fail to activate on the other half of clicks 
-        } else {
-          console.log('Coin flip failed');
-          tubeSqueak++;
-          console.log('TubeToy squeaker failed activations:');
-          console.log(tubeSqueak);
-        }        
-      } else {
-        // If the current status is 'on', return to starting state
-        squeakerImage.removeClass('on');
-        squeakerImage.addClass('off');
-
-        squeakerIcon.removeClass('on');
-        squeakerIcon.addClass('off');
-
-        rainbow1.removeClass('on');
-        rainbow1.addClass('off');
-
-        rainbow2.removeClass('on');
-        rainbow2.addClass('off');
-
-        console.log('Squeaker tube returned to start');
-
-        // Pause the sound only if it's currently playing
-        if (!notificationSoundR.paused) {
-          notificationSoundR.pause();
-          notificationSoundR.currentTime = 0; // Reset audio to the beginning
-        }
-
-        // Pause the sound only if it's currently playing
+        // squeaker tube sound
         if (notificationSound.paused) {
           notificationSound.play();
           notificationSound.currentTime = 0; // Reset audio to the beginning
           notificationSound.loop = false; // Set to only play on activation
         }
+        // Rainbow gems shimmer
+        if (notificationSoundR.paused) {
+          notificationSoundR.play();
+          notificationSoundR.loop = true; // 
+        }
+      // Fail to activate on the other half of clicks 
+      } else {
+        console.log('Coin flip failed');
+        tubeSqueak++;
+        console.log('TubeToy squeaker failed activations:');
+        console.log(tubeSqueak);
+      }        
+    } else {
+      // If the current status is 'on', return to starting state
+      squeakerImage.removeClass('on');
+      squeakerImage.addClass('off');
+
+      squeakerIcon.removeClass('on');
+      squeakerIcon.addClass('off');
+
+      rainbow1.removeClass('on');
+      rainbow1.addClass('off');
+
+      rainbow2.removeClass('on');
+      rainbow2.addClass('off');
+
+      console.log('Squeaker tube returned to start');
+
+      // Pause the sound only if it's currently playing
+      if (!notificationSoundR.paused) {
+        notificationSoundR.pause();
+        notificationSoundR.currentTime = 0; // Reset audio to the beginning
       }
-    }
-  
-  
+
+      // Pause the sound only if it's currently playing
+      if (notificationSound.paused) {
+        notificationSound.play();
+        notificationSound.currentTime = 0; // Reset audio to the beginning
+        notificationSound.loop = false; // Set to only play on activation
+      }
+    }  
 }
 
 function duckDomeLever(part, currentStatus) {
@@ -468,7 +463,7 @@ function duckDomeLever(part, currentStatus) {
   var notificationSoundBuild = $('#notification-sound4Build')[0];
 
   var notificationSoundB = $('#notification-sound4Ball')[0];
-  notificationSoundB.volume = 0.25;
+  notificationSoundB.volume = 0.3;
   
     // Check if the icons have the 'initial' class and remove it
     if (inertDomeIcon.hasClass('initial')) {
@@ -479,92 +474,91 @@ function duckDomeLever(part, currentStatus) {
       leverIcon.removeClass('initial');
 
       console.log("First click on dome's red lever");
-    } else {
+    }
 
-      // Check the currentStatus to determine the action
-      if (leverIcon.hasClass('off')) {
+    // Check the currentStatus to determine the action
+    if (leverIcon.hasClass('off')) {
         
-        // Flip a coin to decide if it activates
-        coinFlipNow = Math.random();
-        console.log('Coin flip for red lever activation:');
-        console.log(coinFlipNow);
-  
-        // Activate only half the time it is clicked after the first attempt
-        if (coinFlipNow >= 0.5) {
+      // Flip a coin to decide if it activates
+      coinFlipNow = Math.random();
+      console.log('Coin flip for red lever activation:');
+      console.log(coinFlipNow);
 
-          // Flip switch flip if in starting position to "on" position
-          if (leverImage.hasClass('initial')) {
-            leverImage.removeClass('initial');
-          }
-      
-          if (duckDomeImage.hasClass('initial')) {
-            duckDomeImage.removeClass('initial');
-          }
-      
-          if (bounceBallImage.hasClass('initial')) {
-            bounceBallImage.removeClass('initial');
-          }
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
 
-          leverIcon.removeClass('off');
-          leverIcon.addClass('on');
+        // Flip switch flip if in starting position to "on" position
+        if (leverImage.hasClass('initial')) {
+          leverImage.removeClass('initial');
+        }
+    
+        if (duckDomeImage.hasClass('initial')) {
+          duckDomeImage.removeClass('initial');
+        }
+    
+        if (bounceBallImage.hasClass('initial')) {
+          bounceBallImage.removeClass('initial');
+        }
 
-          leverImage.removeClass('off');
-          leverImage.addClass('on');
+        leverIcon.removeClass('off');
+        leverIcon.addClass('on');
 
-          duckDomeImage.removeClass('off');
-          duckDomeImage.addClass('on');
+        leverImage.removeClass('off');
+        leverImage.addClass('on');
 
-          bounceBallImage.removeClass('off');
-          bounceBallImage.addClass('on');
+        duckDomeImage.removeClass('off');
+        duckDomeImage.addClass('on');
 
-          console.log('Bouncing Ball revealed');
+        bounceBallImage.removeClass('off');
+        bounceBallImage.addClass('on');
 
-          // Play the sound once when activating
-          if (notificationSoundDissolve.paused) {
-            notificationSoundDissolve.play();
-            notificationSoundDissolve.loop = false;
-          }
+        console.log('Bouncing Ball revealed');
 
-          // ball bouncing in dome
-          if (notificationSoundB.paused) {
-            notificationSoundB.play();
-            notificationSoundB.loop = true; // 
-          }
-        // Fail to activate on the other half of clicks 
-        } else {
-          console.log('Coin flip failed');
-          tubeBall++;
-          console.log('TubeToy ball dome failed activations:');
-          console.log(tubeBall);
-        } 
-      
+        // Play the sound once when activating
+        if (notificationSoundDissolve.paused) {
+          notificationSoundDissolve.play();
+          notificationSoundDissolve.loop = false;
+        }
+
+        // ball bouncing in dome
+        if (notificationSoundB.paused) {
+          notificationSoundB.play();
+          notificationSoundB.loop = true; // 
+        }
+      // Fail to activate on the other half of clicks 
       } else {
-        // If the current status is 'on', return to starting state
-        leverIcon.removeClass('on');
-        leverIcon.addClass('off');
+        console.log('Coin flip failed');
+        tubeBall++;
+        console.log('TubeToy ball dome failed activations:');
+        console.log(tubeBall);
+      } 
+    
+    } else {
+      // If the current status is 'on', return to starting state
+      leverIcon.removeClass('on');
+      leverIcon.addClass('off');
 
-        leverImage.removeClass('on');
-        leverImage.addClass('off');
+      leverImage.removeClass('on');
+      leverImage.addClass('off');
 
-        duckDomeImage.removeClass('on');
-        duckDomeImage.addClass('off');
+      duckDomeImage.removeClass('on');
+      duckDomeImage.addClass('off');
 
-        bounceBallImage.removeClass('on');
-        bounceBallImage.addClass('off');
+      bounceBallImage.removeClass('on');
+      bounceBallImage.addClass('off');
 
-        console.log('Dome becomes occluded');
+      console.log('Dome becomes occluded');
 
-        // Pause the sound only if it's currently playing
-        if (notificationSoundBuild.paused) {
-          notificationSoundBuild.play();
-          notificationSoundBuild.loop = false; 
-        }
+      // Pause the sound only if it's currently playing
+      if (notificationSoundBuild.paused) {
+        notificationSoundBuild.play();
+        notificationSoundBuild.loop = false; 
+      }
 
-        // Pause the sound only if it's currently playing
-        if (!notificationSoundB.paused) {
-          notificationSoundB.pause();
-          notificationSoundB.currentTime = 0; // Reset audio to the beginning
-        }
+      // Pause the sound only if it's currently playing
+      if (!notificationSoundB.paused) {
+        notificationSoundB.pause();
+        notificationSoundB.currentTime = 0; // Reset audio to the beginning
       }
     }
   
@@ -603,8 +597,8 @@ function spinOrangePinwheel(part, currentStatus) {
       console.log('Coin flip for orange pinwheel:');
       console.log(coinFlipNow);
 
-      // Activate only half the time it is clicked after the first attempt
-      if (coinFlipNow >= 0.5) {
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
 
         console.log('Spin Orange Pinwheel');
       
@@ -690,66 +684,64 @@ function boxLightOn(part, currentStatus) {
       middleSwitchIcon.removeClass('initial');
       
       console.log('First click on switch for box light');
-    } else {
-      // Check the currentStatus to determine the action
-      if (middleSwitchIcon.hasClass('off')) {
+    }
 
-        // Flip a coin to decide if it activates
-        coinFlipNow = Math.random();
-        console.log('Coin flip for box light:');
-        console.log(coinFlipNow);
-  
-        // Activate only half the time it is clicked after the first attempt
-        if (coinFlipNow >= 0.5) {
-          console.log('Coin flip successful');
+    // Check the currentStatus to determine the action
+    if (middleSwitchIcon.hasClass('off')) {
 
-          // Flip switch flip if in starting position to "on" position
-          middleSwitchIcon.removeClass('off');
-          middleSwitchIcon.addClass('on');
+      // Flip a coin to decide if it activates
+      coinFlipNow = Math.random();
+      console.log('Coin flip for box light:');
+      console.log(coinFlipNow);
 
-          middleSwitchImage.removeClass('off');
-          middleSwitchImage.addClass('on');
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
+        console.log('Coin flip successful');
 
-          boxLightImage.removeClass('off');
-          boxLightImage.addClass('on');
+        // Flip switch flip if in starting position to "on" position
+        middleSwitchIcon.removeClass('off');
+        middleSwitchIcon.addClass('on');
 
-          console.log('Box Light Button Pressed');
+        middleSwitchImage.removeClass('off');
+        middleSwitchImage.addClass('on');
 
-          // Play the sound when activating
-          if (notificationSound.paused) {
-            notificationSound.play();
-            notificationSound.loop = true; // Set to loop
-          }
+        boxLightImage.removeClass('off');
+        boxLightImage.addClass('on');
 
-        } else {
-          console.log('Coin flip failed');
-          boxLight++;
-          console.log('BoxToy light switch failed activations:');
-          console.log(boxLight);
+        console.log('Box Light Button Pressed');
+
+        // Play the sound when activating
+        if (notificationSound.paused) {
+          notificationSound.play();
+          notificationSound.loop = true; // Set to loop
         }
 
       } else {
-        // If the current status is 'on', return to starting state
-        middleSwitchIcon.removeClass('on');
-        middleSwitchIcon.addClass('off');
-
-        middleSwitchImage.removeClass('on');
-        middleSwitchImage.addClass('off');
-
-        boxLightImage.removeClass('on');
-        boxLightImage.addClass('off');
-
-        console.log('Box Light turned off');
-
-        // Pause the sound only if it's currently playing
-        if (!notificationSound.paused) {
-          notificationSound.pause();
-          notificationSound.currentTime = 0; // Reset audio to the beginning
-        }
+        console.log('Coin flip failed');
+        boxLight++;
+        console.log('BoxToy light switch failed activations:');
+        console.log(boxLight);
       }
-    }
-  
-  
+
+    } else {
+      // If the current status is 'on', return to starting state
+      middleSwitchIcon.removeClass('on');
+      middleSwitchIcon.addClass('off');
+
+      middleSwitchImage.removeClass('on');
+      middleSwitchImage.addClass('off');
+
+      boxLightImage.removeClass('on');
+      boxLightImage.addClass('off');
+
+      console.log('Box Light turned off');
+
+      // Pause the sound only if it's currently playing
+      if (!notificationSound.paused) {
+        notificationSound.pause();
+        notificationSound.currentTime = 0; // Reset audio to the beginning
+      }
+    }       
 }
 
 // Blue Cord & Rainbow Pinwheel
@@ -767,79 +759,77 @@ function cordSpinWheel(part, currentStatus) {
       if (blueCordIcon.hasClass('initial')) {
       blueCordIcon.removeClass('initial');
       console.log('First click on button on blue cord for rainbow pinwheel');
-    } else {
-      // Check the currentStatus to determine the action
-      if (blueCordIcon.hasClass('off')) {
+    }
+    
+    
+    // Check the currentStatus to determine the action
+    if (blueCordIcon.hasClass('off')) {
   
-        // Flip a coin to decide if it activates
-        coinFlipNow = Math.random();
-        console.log('Coin flip for blue cord pull:');
-        console.log(coinFlipNow);
-  
-        // Activate only half the time it is clicked after the first attempt
-        if (coinFlipNow >= 0.5) {
+      // Flip a coin to decide if it activates
+      coinFlipNow = Math.random();
+      console.log('Coin flip for blue cord pull:');
+      console.log(coinFlipNow);
 
-          if (blueCordImage.hasClass('initial')) {
-            blueCordImage.removeClass('initial');
-          }
-      
-          if (rainbowPinwheelImage.hasClass('initial')) {
-            rainbowPinwheelImage.removeClass('initial');
-          }
+      // Activate 75% of the time it is clicked after the first attempt
+      if (coinFlipNow < 0.75) {
 
-          console.log('Coin flip successful');
-
-          // Flip switch flip if in starting position to "on" position
-          blueCordIcon.removeClass('off');
-          blueCordIcon.addClass('on');
-
-          blueCordImage.removeClass('off');
-          blueCordImage.addClass('on');
-
-          rainbowPinwheelImage.removeClass('off');
-          rainbowPinwheelImage.addClass('on');
-
-          console.log('Cord pulled, rainbow wheel spinning');
-
-          // Play the sound once when activating
-
-          // rainbow pinwheel crank
-          if (notificationSoundC.paused) {
-            notificationSoundC.play();
-            notificationSoundC.loop = true; // 
-          }
-
-        // Fail to activate on the other half of clicks 
-        } else {
-          console.log('Coin flip failed');
-          boxCordPin++;
-          console.log('BoxToy cord pull failed activations:');
-          console.log(boxCordPin);
+        if (blueCordImage.hasClass('initial')) {
+          blueCordImage.removeClass('initial');
+        }
+    
+        if (rainbowPinwheelImage.hasClass('initial')) {
+          rainbowPinwheelImage.removeClass('initial');
         }
 
+        console.log('Coin flip successful');
+
+        // Flip switch flip if in starting position to "on" position
+        blueCordIcon.removeClass('off');
+        blueCordIcon.addClass('on');
+
+        blueCordImage.removeClass('off');
+        blueCordImage.addClass('on');
+
+        rainbowPinwheelImage.removeClass('off');
+        rainbowPinwheelImage.addClass('on');
+
+        console.log('Cord pulled, rainbow wheel spinning');
+
+        // Play the sound once when activating
+
+        // rainbow pinwheel crank
+        if (notificationSoundC.paused) {
+          notificationSoundC.play();
+          notificationSoundC.loop = true; // 
+        }
+
+      // Fail to activate on the other half of clicks 
       } else {
-        // If the current status is 'on', return to starting state
-        blueCordIcon.removeClass('on');
-        blueCordIcon.addClass('off');
+        console.log('Coin flip failed');
+        boxCordPin++;
+        console.log('BoxToy cord pull failed activations:');
+        console.log(boxCordPin);
+      }
 
-        blueCordImage.removeClass('on');
-        blueCordImage.addClass('off');
+    } else {
+      // If the current status is 'on', return to starting state
+      blueCordIcon.removeClass('on');
+      blueCordIcon.addClass('off');
 
-        rainbowPinwheelImage.removeClass('on');
-        rainbowPinwheelImage.addClass('off');
+      blueCordImage.removeClass('on');
+      blueCordImage.addClass('off');
 
-        console.log('Cord pulled, rainbow wheel stopped');
+      rainbowPinwheelImage.removeClass('on');
+      rainbowPinwheelImage.addClass('off');
 
-        // Pause the sound only if it's currently playing
-        if (!notificationSoundC.paused) {
-          notificationSoundC.pause();
-          notificationSoundC.currentTime = 0; // Reset audio to the beginning
-        }
+      console.log('Cord pulled, rainbow wheel stopped');
+
+      // Pause the sound only if it's currently playing
+      if (!notificationSoundC.paused) {
+        notificationSoundC.pause();
+        notificationSoundC.currentTime = 0; // Reset audio to the beginning
       }
     }
-
-  
-  
 }
 
 // Blue & Orange Marbles
@@ -855,109 +845,108 @@ function rattleMarbles(part, currentStatus) {
 
   var notificationSound = $('#notification-sound4')[0];
   
-    // Check if the image has the 'initial' class and remove it
-    if (marbleButtonIcon.hasClass('initial')) {
-      marbleButtonIcon.removeClass('initial');
-      console.log('First click on button for marble rattle');      
-    } else {
-
-      // Check the currentStatus to determine the action
-      if (marbleButtonIcon.hasClass('off')) {
-
-        // Flip a coin to decide if it activates
-        coinFlipNow = Math.random();
-        console.log('Coin flip for marble rattle:');
-        console.log(coinFlipNow);
+  // Check if the image has the 'initial' class and remove it
+  if (marbleButtonIcon.hasClass('initial')) {
+    marbleButtonIcon.removeClass('initial');
+    console.log('First click on button for marble rattle');      
+  } 
   
-        // Activate only half the time it is clicked after the first attempt
-        if (coinFlipNow >= 0.5) { 
+  // Check the currentStatus to determine the action
+  if (marbleButtonIcon.hasClass('off')) {
 
-          // Flip switch flip if in starting position to "on" position
-          if (marbleButtonImage.hasClass('initial')) {
-            marbleButtonImage.removeClass('initial');
-          }
-      
-          if (orangeMarbleImage.hasClass('initial')) {
-            orangeMarbleImage.removeClass('initial');
-          }
-          
-          if (blueMarbleImage.hasClass('initial')) {
-            blueMarbleImage.removeClass('initial');
-          }
-      
-          if (orangeMarbleIcon.hasClass('initial')) {
-            orangeMarbleIcon.removeClass('initial');
-          }
-      
-          if (blueMarbleIcon.hasClass('initial')) {
-            blueMarbleIcon.removeClass('initial');
-          }
+    // Flip a coin to decide if it activates
+    coinFlipNow = Math.random();
+    console.log('Coin flip for marble rattle:');
+    console.log(coinFlipNow);
 
-          marbleButtonIcon.removeClass('off');
-          marbleButtonIcon.addClass('on');
+    // Activate 75% of the time it is clicked after the first attempt
+    if (coinFlipNow < 0.75) { 
 
-          marbleButtonImage.removeClass('off');
-          marbleButtonImage.addClass('on');
-
-          orangeMarbleImage.removeClass('off');
-          orangeMarbleImage.addClass('on');
-
-          blueMarbleImage.removeClass('off');
-          blueMarbleImage.addClass('on');
-
-          orangeMarbleIcon.removeClass('off');
-          orangeMarbleIcon.addClass('on');
-
-          blueMarbleIcon.removeClass('off');
-          blueMarbleIcon.addClass('on');
-
-          console.log('Air pushes marbles up, rattle');
-
-          // Play the sound once when activating
-          if (notificationSound.paused) {
-            notificationSound.play();
-            notificationSound.loop = true;
-          } 
-
-       // Fail to activate on the other half of clicks 
-        } else {
-          console.log('Coin flip failed');
-          boxMarbles++;
-          console.log('BoxToy marble button failed activations:');
-          console.log(boxMarbles);
-        }
-      } else {
-        // If the current status is 'on', return to starting state
-        marbleButtonIcon.removeClass('on');
-        marbleButtonIcon.addClass('off');
-
-        marbleButtonImage.removeClass('on');
-        marbleButtonImage.addClass('off');
-
-        orangeMarbleImage.removeClass('on');
-        orangeMarbleImage.addClass('off');
-
-        blueMarbleImage.removeClass('on');
-        blueMarbleImage.addClass('off');
-
-        orangeMarbleIcon.removeClass('on');
-        orangeMarbleIcon.addClass('off');
-
-        blueMarbleIcon.removeClass('on');
-        blueMarbleIcon.addClass('off');
-
-        console.log('Air turns off, marbles drop');
-
-        // Pause the sound only if it's currently playing
-        setTimeout(function () {
-          if (!notificationSound.paused) {
-              notificationSound.pause();
-              notificationSound.currentTime = 0; // Reset audio to the beginning
-          }
-        }, 410);
-        // delay by sound pausing by 0.41s, just over length of drop animation
+      // Flip switch flip if in starting position to "on" position
+      if (marbleButtonImage.hasClass('initial')) {
+        marbleButtonImage.removeClass('initial');
       }
+  
+      if (orangeMarbleImage.hasClass('initial')) {
+        orangeMarbleImage.removeClass('initial');
+      }
+      
+      if (blueMarbleImage.hasClass('initial')) {
+        blueMarbleImage.removeClass('initial');
+      }
+  
+      if (orangeMarbleIcon.hasClass('initial')) {
+        orangeMarbleIcon.removeClass('initial');
+      }
+  
+      if (blueMarbleIcon.hasClass('initial')) {
+        blueMarbleIcon.removeClass('initial');
+      }
+
+      marbleButtonIcon.removeClass('off');
+      marbleButtonIcon.addClass('on');
+
+      marbleButtonImage.removeClass('off');
+      marbleButtonImage.addClass('on');
+
+      orangeMarbleImage.removeClass('off');
+      orangeMarbleImage.addClass('on');
+
+      blueMarbleImage.removeClass('off');
+      blueMarbleImage.addClass('on');
+
+      orangeMarbleIcon.removeClass('off');
+      orangeMarbleIcon.addClass('on');
+
+      blueMarbleIcon.removeClass('off');
+      blueMarbleIcon.addClass('on');
+
+      console.log('Air pushes marbles up, rattle');
+
+      // Play the sound once when activating
+      if (notificationSound.paused) {
+        notificationSound.play();
+        notificationSound.loop = true;
+      } 
+
+   // Fail to activate on the other half of clicks 
+    } else {
+      console.log('Coin flip failed');
+      boxMarbles++;
+      console.log('BoxToy marble button failed activations:');
+      console.log(boxMarbles);
     }
+  } else {
+    // If the current status is 'on', return to starting state
+    marbleButtonIcon.removeClass('on');
+    marbleButtonIcon.addClass('off');
+
+    marbleButtonImage.removeClass('on');
+    marbleButtonImage.addClass('off');
+
+    orangeMarbleImage.removeClass('on');
+    orangeMarbleImage.addClass('off');
+
+    blueMarbleImage.removeClass('on');
+    blueMarbleImage.addClass('off');
+
+    orangeMarbleIcon.removeClass('on');
+    orangeMarbleIcon.addClass('off');
+
+    blueMarbleIcon.removeClass('on');
+    blueMarbleIcon.addClass('off');
+
+    console.log('Air turns off, marbles drop');
+
+    // Pause the sound only if it's currently playing
+    setTimeout(function () {
+      if (!notificationSound.paused) {
+          notificationSound.pause();
+          notificationSound.currentTime = 0; // Reset audio to the beginning
+      }
+    }, 410);
+    // delay by sound pausing by 0.41s, just over length of drop animation
+  }
 }
 
 // Slide orange knob up and down
@@ -975,7 +964,7 @@ function orangeSlide(part, currentStatus) {
     }
   
   // Check the currentStatus to determine the action
-  if (currentStatus === 'off') {
+  if (orangeSliderIcon.hasClass('off')) {
     // Flip switch flip if in starting position to "on" position
     orangeSliderIcon.removeClass('off');
     orangeSliderIcon.addClass('on');
